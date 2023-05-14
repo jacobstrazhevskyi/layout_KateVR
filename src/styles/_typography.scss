@@ -30,3 +30,7 @@ h3 {
 .text-2 {
   @extend %text-2;
 }
+
+.custom-text {
+  @extend %text-custom;
+}

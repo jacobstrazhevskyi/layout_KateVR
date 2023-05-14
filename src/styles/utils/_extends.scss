@@ -1,3 +1,5 @@
+/* stylelint-disable font-family-no-missing-generic-family-keyword */
+
 %h1 {
   font-weight: 900;
   font-size: 4.6rem;
@@ -24,4 +26,8 @@
 %text-2 {
   font-size: 14px;
   line-height: auto;
+}
+
+%text-custom {
+  font-family: Quantum;
 }
