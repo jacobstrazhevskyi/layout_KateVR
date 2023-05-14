@@ -1,3 +1,32 @@
+/* stylelint-disable font-family-no-missing-generic-family-keyword */
+html {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: inherit;
+  font-weight: inherit;
+  color: #fff;
+}
+
 h1 {
   @extend %h1;
+}
+
+h2 {
+  @extend %h2;
+}
+
+h3 {
+  @extend %h3;
+}
+
+.text-1 {
+  @extend %text-1;
+}
+
+.text-2 {
+  @extend %text-2;
 }
