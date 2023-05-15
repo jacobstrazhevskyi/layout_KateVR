@@ -1,4 +1,5 @@
 /* stylelint-disable font-family-no-missing-generic-family-keyword */
+/* stylelint-disable no-descending-specificity */
 @import "utils";
 @import "fonts";
 @import "typography";
@@ -62,15 +63,7 @@ body {
       position: absolute;
       bottom: 0;
       right: 0;
-      background-color: $color-blue;
-      width: 9px;
-      height: 6px;
-
-      clip-path: polygon(50% 0, 100% 100%, 100% 100%, 0 100%);
-      -webkit-clip-path: polygon(50% 0, 100% 100%, 100% 100%, 0 100%);
-      -moz-clip-path: polygon(50% 0, 100% 100%, 100% 100%, 0 100%);
-
-      transform: rotate(-180deg);
+      @extend %triangle;
     }
   }
 
@@ -87,6 +80,10 @@ body {
   &__content {
     position: relative;
     padding-left: 20px;
+
+    &:not(:last-child) {
+      margin-bottom: 21.2rem;
+    }
   }
 
   &__content-wrapper {
@@ -137,6 +134,84 @@ body {
   &__play-button {
     display: flex;
     align-items: center;
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  &__faq-and-help {
+    display: flex;
+
+    & > * {
+      font-weight: 500;
+      font-size: 1.6rem;
+      line-height: 150%;
+
+      &:not(:last-child) {
+        margin-right: 39px;
+      }
+    }
+  }
+
+  &__more {
+    position: relative;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 150%;
+
+    color: $color-blue;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -13px;
+      
+      @extend %triangle;
+      transform: rotate(-180deg) translateX(50%);
+    }
+  }
+  
+  &__slider {
+    display: flex;
+
+    & > * {
+      font-weight: 500;
+      font-size: 1.6rem;
+      line-height: 150%;
+    }
+  }
+}
+
+.slider-header {
+  position: relative;
+
+  &__previous {
+    transform: translateX(-10.3rem);
+  }
+
+  &__border-grey {
+    position: absolute;
+    width: 207px;
+    height: 1px;
+    background-color: #212121;
+  
+    bottom: -10px;
+    left: -10.3rem;
+  }
+
+  &__border-blue {
+    position: absolute;
+    width: 69px;
+    height: 1px;
+    background-color: $color-blue;
+
+    bottom: -10px;
+    left: -10.3rem;
   }
 }
 
