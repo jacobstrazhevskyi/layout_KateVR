@@ -8,7 +8,7 @@ html {
 body {
   font-family: inherit;
   font-weight: inherit;
-  color: #fff;
+  color: $color-white;
 }
 
 h1 {
@@ -33,4 +33,21 @@ h3 {
 
 .custom-text {
   @extend %text-custom;
+}
+
+.button {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1.3rem 5.5rem;
+  color: $color-white;
+  background-color: $color-blue;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+
+  @include hover(background-color, $color-white);
+  @include hover(color, $color-blue);
 }

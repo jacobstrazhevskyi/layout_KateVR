@@ -1,3 +1,4 @@
+/* stylelint-disable font-family-no-missing-generic-family-keyword */
 @import "utils";
 @import "fonts";
 @import "typography";
@@ -6,3 +7,104 @@
 body {
   background: $c-gray;
 }
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-width: 100%;
+  overflow: hidden;
+}
+
+._container {
+  max-width: 1452px;
+  margin: 0 auto;
+  box-sizing: content-box;
+}
+
+///////////////////////////////////////////
+/// HEADER
+
+.header {
+  padding-top: 4.7rem;
+  padding-bottom: 10.7rem;
+  background-image: $bg-gradient;
+
+  &__top {
+    display: flex;
+    align-items: center;
+  }
+
+  &__functionality {
+    display: flex;
+    align-items: flex-start;
+    margin-right: auto;
+  }
+
+  &__lang-switch {
+    position: relative;
+    font-family: "Inter";
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 130%;
+    color: $color-blue;
+    margin-left: 3.5rem;
+    transform: translateY(-3px);
+
+    width: 34px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      background-color: $color-blue;
+      width: 9px;
+      height: 6px;
+
+      clip-path: polygon(50% 0, 100% 100%, 100% 100%, 0 100%);
+      -webkit-clip-path: polygon(50% 0, 100% 100%, 100% 100%, 0 100%);
+      -moz-clip-path: polygon(50% 0, 100% 100%, 100% 100%, 0 100%);
+
+      transform: rotate(-180deg);
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &__list {
+    display: flex;
+    min-width: 318px;
+  }
+
+  // &__button {
+
+  // }
+
+  // &__content {
+
+  // }
+
+  // &__bottom {
+
+  // }
+}
+
+.list-header {
+  &__item {
+    margin-right: 3.5rem;
+    display: flex;
+    align-items: center;
+    padding-top: 1.2rem;
+    padding-bottom: 1.5rem;
+  }
+
+  &__link {
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 130%;
+  }
+}
+////////////////////////////////////////////
