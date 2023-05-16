@@ -40,6 +40,17 @@ h3 {
   @extend %text-custom;
 }
 
+.section-title-centred {
+  text-align: center;
+
+  span {
+    font-family: Quantum;
+    font-weight: 400;
+    font-size: 3.6rem;
+    line-height: 122%;
+  }
+}
+
 .button {
   cursor: pointer;
   display: flex;
