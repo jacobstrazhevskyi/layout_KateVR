@@ -43,12 +43,20 @@ h3 {
 .section-title-centred {
   text-align: center;
 
+  @media only screen and (max-width: 768px) {
+    font-size: 21px;
+  }
+
   span {
     font-family: Quantum;
     font-weight: 400;
     font-size: 3.6rem;
     line-height: 122%;
     color: $color-blue;
+
+    @media only screen and (max-width: 768px) {
+      font-size: 21px;
+    }
   }
 }
 
