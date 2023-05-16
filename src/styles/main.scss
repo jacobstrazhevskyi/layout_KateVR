@@ -132,6 +132,10 @@ body {
         height: 13px;
         border-top: 1px solid $color-white;
         border-bottom: 1px solid $color-white;
+
+        @media only screen and (max-width: 430px) {
+          top: 6.5px;
+        }
       }
 
       &::before {
@@ -142,6 +146,10 @@ body {
         right: 0;
         transform: translateX(-15.5px);
         z-index: 2;
+      
+        @media only screen and (max-width: 430px) {
+          top: 12.5px;
+        }
       }
     }
 
