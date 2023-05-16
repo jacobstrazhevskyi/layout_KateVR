@@ -21,6 +21,15 @@ body {
   margin: 0 auto;
   box-sizing: content-box;
   padding: 0 15px;
+
+  @media only screen and (max-width: 1280px) {
+    max-width: 1060px;
+  }
+
+  @media only screen and (max-width: 430px) {
+    max-width: 100%;
+    padding: 0 20px;
+  }
 }
 
 ///////////////////////////////////////////
@@ -31,18 +40,48 @@ body {
   padding-bottom: 10.7rem;
   background-image: $bg-gradient;
 
+  @media only screen and (max-width: 768px) {
+    padding-bottom: 62px;
+  }
+
+  @media only screen and (max-width: 430px) {
+    padding-top: 18px;
+  }
+
   &__top {
     display: flex;
     align-items: center;
 
     &:not(:last-child) {
-      margin-bottom: 216px;
+      margin-bottom: 21.6rem;
+
+      @media only screen and (max-width: 1280px) {
+        margin-bottom: 10.1rem;
+      }
+
+      @media only screen and (max-width: 768px) {
+        margin-bottom: 55px;
+      }
+
+      @media only screen and (max-width: 430px) {
+        margin-bottom: 0;
+      }
     }
+
+    @media only screen and (max-width: 430px) {
+      height: 30px;
+    }
+  }
+
+  &__logo-image {
+    width: 58px;
+    height: 12px;
   }
 
   &__functionality {
     display: flex;
     align-items: flex-start;
+    align-self: flex-start;
     margin-right: auto;
   }
 
@@ -65,11 +104,50 @@ body {
       right: 0;
       @extend %triangle;
     }
+
+    @media only screen and (max-width: 768px) {
+      display: none;
+    }
   }
 
   &__nav {
+    position: relative;
     display: flex;
     align-items: flex-start;
+
+    @media only screen and (max-width: 768px) {
+      visibility: hidden;
+      
+      &::after,
+      &::before {
+        visibility: visible;
+        content: "";
+        position: absolute;
+      }
+
+      &::after {
+        top: 0;
+        right: 0;
+        width: 29px;
+        height: 13px;
+        border-top: 1px solid $color-white;
+        border-bottom: 1px solid $color-white;
+      }
+
+      &::before {
+        background-color: $color-white;
+        width: 20px;
+        height: 1px;
+        top: 6px;
+        right: 0;
+        transform: translateX(-15.5px);
+        z-index: 2;
+      }
+    }
+
+    @media only screen and (max-width: 540px) {
+      width: 49px;
+    }
   }
 
   &__list {
@@ -78,19 +156,43 @@ body {
   }
 
   &__content {
+    display: flex;
+    flex-direction: column;
     position: relative;
     padding-left: 20px;
 
     &:not(:last-child) {
       margin-bottom: 21.2rem;
+
+      @media only screen and (max-width: 1280px) {
+        margin-bottom: 8.4rem;
+      }
+
+      @media only screen and (max-width: 768px) {
+        margin-bottom: 0;
+      }
+    }
+
+    @media only screen and (max-width: 430px) {
+      align-items: center;
+    }
+
+    @media only screen and (max-width: 430px) {
+      padding-left: 0;
     }
   }
 
   &__content-wrapper {
+    display: flex;
+    flex-direction: column;
     position: relative;
 
     & > * {
       margin-left: 8.6rem;
+      
+      @media only screen and (max-width: 1080px) {
+        margin-left: 0;
+      }
     }
   }
 
@@ -98,6 +200,30 @@ body {
     position: absolute;
     right: 0;
     top: 0;
+
+    @media only screen and (max-width: 1280px) {
+      width: 811px;
+    }
+
+    @media only screen and (max-width: 1080px) {
+      width: 494px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    @media only screen and (max-width: 700px) {
+      opacity: 0.3;
+    }
+
+    @media only screen and (max-width: 430px) {
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: translateY(0);
+      opacity: 1;
+      width: 320px;
+      height: 172px;
+    }
   }
 
   &__title {
@@ -106,6 +232,18 @@ body {
     line-height: 129%;
     margin-bottom: 3.5rem;
     margin-left: 0;
+
+    @media only screen and (max-width: 1080px) {
+      font-size: 3.25rem;
+    }
+
+    @media only screen and (max-width: 768px) {
+      margin-bottom: 2rem;
+    }
+
+    @media only screen and (max-width: 430px) {
+      font-size: 26px;
+    }
   }
 
   &__span {
@@ -113,6 +251,14 @@ body {
     font-size: 5.4rem;
     line-height: 129%;
     color: $color-blue;
+
+    @media only screen and (max-width: 1080px) {
+      font-size: 3.25rem;
+    }
+
+    @media only screen and (max-width: 430px) {
+      font-size: 26px;
+    }
   }
 
   &__text {
@@ -122,6 +268,14 @@ body {
     max-width: 43.9rem;
     color: $color-grey-light;
     margin-bottom: 3rem;
+
+    @media only screen and (max-width: 1080px) {
+      font-size: 2rem;
+    }
+
+    @media only screen and (max-width: 768px) {
+      margin-bottom: 10px;
+    }
   }
 
   &__cost {
@@ -129,11 +283,25 @@ body {
     font-size: 2rem;
     line-height: 120%;
     margin-bottom: 4.5rem;
+
+    @media only screen and (max-width: 768px) {
+      margin-bottom: 24px;
+    }
+
+    @media only screen and (max-width: 430px) {
+      font-size: 18px;
+      align-self: center;
+    }
   }
 
   &__play-button {
     display: flex;
     align-items: center;
+
+    @media only screen and (max-width: 430px) {
+      width: 221px;
+      align-self: flex-start;
+    }
   }
 
   &__bottom {
@@ -141,6 +309,10 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+
+    @media only screen and (max-width: 768px) {
+      display: none;
+    }
   }
 
   &__faq-and-help {
@@ -196,7 +368,7 @@ body {
 
   &__border-grey {
     position: absolute;
-    width: 207px;
+    width: 20.7rem;
     height: 1px;
     background-color: #212121;
   
@@ -206,7 +378,7 @@ body {
 
   &__border-blue {
     position: absolute;
-    width: 69px;
+    width: 6.9rem;
     height: 1px;
     background-color: $color-blue;
 

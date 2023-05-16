@@ -50,11 +50,18 @@
             </nav>
           </div>
           <div class="header__content">
-            <img
-              src="./images/header/background.png" 
-              alt="Header background image" 
-              class="header__background-image"
-            >
+            <picture>
+              <source 
+                srcset="./images/header/background-320.png" 
+                type="image/png" 
+                media="(max-width: 430px)"
+              >
+              <img
+                src="./images/header/background.png" 
+                alt="Header background image" 
+                class="header__background-image"
+              >
+            </picture>
             <div class="header__content-wrapper">
               <h1 class="header__title">
                 THE NEW START OF <br>
