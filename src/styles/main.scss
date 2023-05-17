@@ -549,8 +549,12 @@ body {
       text-align: start;
 
       display: -webkit-box;
-      -webkit-line-clamp: 2;
+      -ms-box-orient: vertical;
+      -moz-box-orient: vertical;
       -webkit-box-orient: vertical;
+      -ms-line-clamp: 2;
+      -moz-line-clamp: 2;
+      -webkit-line-clamp: 2;
 
       &::after {
         content: "...";
