@@ -274,7 +274,6 @@ body {
     font-size: 2rem;
     line-height: 150%;
     max-width: 43.9rem;
-    color: $color-grey-light;
     margin-bottom: 3rem;
 
     @media only screen and (max-width: 1080px) {
@@ -299,16 +298,6 @@ body {
     @media only screen and (max-width: 430px) {
       font-size: 18px;
       align-self: center;
-    }
-  }
-
-  &__play-button {
-    display: flex;
-    align-items: center;
-
-    @media only screen and (max-width: 430px) {
-      width: 221px;
-      align-self: flex-start;
     }
   }
 
@@ -355,20 +344,17 @@ body {
       transform: rotate(-180deg) translateX(50%);
     }
   }
-  
-  &__slider {
-    display: flex;
-
-    & > * {
-      font-weight: 500;
-      font-size: 1.6rem;
-      line-height: 150%;
-    }
-  }
 }
 
-.slider-header {
+.slider {
   position: relative;
+  display: flex;
+
+  & > * {
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 150%;
+  }
 
   &__previous {
     transform: translateX(-10.3rem);
@@ -397,6 +383,14 @@ body {
 
 .play-button {
   cursor: pointer;
+
+  display: flex;
+  align-items: center;
+
+  @media only screen and (max-width: 430px) {
+    width: 221px;
+    align-self: flex-start;
+  }
 
   &__text {
     font-weight: 500;
@@ -530,7 +524,6 @@ body {
   &__text {
     max-width: 348px;
     text-align: center;
-    color: $color-grey-light;
 
     @media only screen and (max-width: 1280px) {
       max-width: 250px;
@@ -565,3 +558,128 @@ body {
 }
 
 ////////////////////////////////////////////
+
+////////////////////////////////////////////
+/// ABOUT US SECTION
+
+.aboutus {
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(146.86deg, #191536 -0.5%, #000 99.5%);
+
+  padding-top: 147px;
+  padding-bottom: 157px;
+
+  &__container {
+    width: 100%;
+
+    @media only screen and (max-width: 1000px) {
+      padding-right: 0;
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: flex-end;
+
+    width: 100%;
+  }
+}
+
+.top-aboutus {
+  &__video-box {
+    display: grid;
+    grid-column-gap: 23px;
+    grid-row-gap: 12px;
+
+    grid-template-areas: "count video"
+      ". slider";
+    margin-right: 117px;
+
+    @media only screen and (max-width: 1000px) {
+      margin-right: 50px;
+    }
+
+    picture {
+      max-width: 622px;
+      min-width: 430px;
+      height: 290px;
+    }
+  }
+  
+  &__series-count {
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 121%;
+    color: $color-blue;
+
+    grid-area: count;
+  }
+  
+  &__video {
+    grid-area: video;
+    width: 100%;
+    height: 100%;
+
+    @media only screen and (max-width: 1280px) {
+      width: 430px;
+      height: 290px;
+    }
+
+    @media only screen and (max-width: 1000px) {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  
+  &__slider {
+    grid-area: slider;
+  }
+
+  &__content-box {
+    position: relative;
+    right: 0;
+  }
+
+  &__text {
+    max-width: 435px;
+    margin-bottom: 42px;
+  }
+  
+  &__title {
+    margin-bottom: 32px;
+  }
+}
+
+.top-aboutus-slider {
+  position: relative;
+  display: flex;
+
+  & > * {
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 150%;
+  }
+
+  &__next {
+    transform: translateX(10.3rem);
+  }
+
+  &__border-grey {
+    position: absolute;
+    width: 20.7rem;
+    height: 1px;
+    background-color: #212121;
+  
+    bottom: -10px;
+  }
+
+  &__border-blue {
+    position: absolute;
+    width: 6.9rem;
+    height: 1px;
+    background-color: $color-blue;
+
+    bottom: -10px;
+  }
+}
