@@ -586,6 +586,10 @@ body {
     @media only screen and (max-width: 1000px) {
       padding-right: 0;
     }
+
+    @media only screen and (max-width: 600px) {
+      padding-left: 0;
+    }
   }
 
   &__top {
@@ -604,6 +608,11 @@ body {
 
     @media only screen and (max-width: 768px) {
       margin-bottom: 84px;
+    }
+
+    @media only screen and (max-width: 600px) {
+      flex-direction: column-reverse;
+      align-items: center;
     }
 
     width: 100%;
@@ -648,6 +657,10 @@ body {
       grid-row-gap: 15px;
     }
 
+    @media only screen and (max-width: 600px) {
+      margin: 0;
+    }
+
     picture {
       max-width: 622px;
       min-width: 430px;
@@ -690,6 +703,10 @@ body {
     @media only screen and (max-width: 1000px) {
       width: 340px;
     }
+
+    @media only screen and (max-width: 600px) {
+      width: 100%;
+    }
   }
   
   &__slider {
@@ -707,6 +724,15 @@ body {
     @media only screen and (max-width: 800px) {
       margin-right: 34px;
     }
+
+    @media only screen and (max-width: 600px) {
+      padding-left: 20px;
+    }
+
+    @media only screen and (max-width: 430px) {
+      padding: 0 20px;
+      margin: 0;
+    }
   }
 
   &__text {
@@ -717,10 +743,22 @@ body {
       font-size: 16px;
       max-width: 340px;
     }
+
+    @media only screen and (max-width: 600px) {
+      margin-bottom: 24px;
+    }
   }
   
   &__title {
     margin-bottom: 32px;
+
+    @media only screen and (max-width: 600px) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__play-button {
+    margin-bottom: 20px;
   }
 
   &__dotted-slider {
@@ -799,6 +837,10 @@ body {
     justify-content: flex-start;
   }
 
+  @media only screen and (max-width: 600px) {
+    justify-content: center;
+  }
+
   &__content {
     margin-right: 101px;
 
@@ -814,6 +856,18 @@ body {
       margin-left: 14px;
       margin-right: 10px;
     }
+
+    @media only screen and (max-width: 600px) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 23px;
+      margin: 0;
+    }
+
+    @media only screen and (max-width: 430px) {
+      align-items: flex-start;
+    }
   }
 
   &__sub-title {
@@ -822,10 +876,18 @@ body {
     line-height: 121%;
     color: $color-blue;
     margin-bottom: 15px;
+
+    @media only screen and (max-width: 600px) {
+      margin-bottom: 11px;
+    }
   }
 
   &__title {
     margin-bottom: 32px;
+
+    @media only screen and (max-width: 600px) {
+      margin-bottom: 22px;
+    }
   }
 
   &__text {
@@ -843,6 +905,10 @@ body {
 
   &__decorations {
     margin-right: 23px;
+    
+    @media only screen and (max-width: 600px) {
+      display: none;
+    }
   }
 }
 
