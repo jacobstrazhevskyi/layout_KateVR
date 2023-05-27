@@ -988,3 +988,113 @@ body {
     }
   }
 }
+///////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////
+/// FEATURES SECTION
+
+.features {
+  padding: 160px 0;
+  background-color: $color-black;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    margin-bottom: 140px;
+    margin-right: 196px;
+    text-align: right;
+
+    @media only screen and (max-width: 1280px) {
+      margin-right: 75px;
+    }
+  }
+
+  &__device {
+    position: relative;
+    align-self: center;
+  }
+
+  &__device-image {
+    position: relative;
+    z-index: 10;
+  }
+
+  &__decorations {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &__decoration {
+    position: absolute;
+
+    &--1 {
+      top: -50px;
+      left: -270px;
+    }
+
+    &--2 {
+      top: 58.5px;
+      right: -17px;
+    }
+
+    &--3 {
+      bottom: -192px;
+      left: 149px;
+    }
+  }
+
+  &__specs {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  &__list {
+    position: absolute;
+  }
+}
+
+.list-features {
+  &--1 {
+    top: -55px;
+    left: -360px;
+  }
+
+  &--2 {
+    top: 157px;
+    left: -360px;
+  }
+
+  &--3 {
+    top: -60px;
+    right: -795px;
+
+    li {
+      max-width: 344px;
+    }
+  }
+
+  &__title {
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 122%;
+
+    &:not(:last-child) {
+      margin-bottom: 21px;
+    }
+  }
+
+  &__item {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: $color-grey-light;
+  }
+}
+
+////////////////////////////////////////////////////////////////////////////
