@@ -998,9 +998,25 @@ body {
   padding: 160px 0;
   background-color: $color-black;
 
+  @media only screen and (max-width: 1280px) {
+    padding: 100px 0;
+  }
+
+  @media only screen and (max-width: 1100px) {
+    padding: 80px 0;
+  }
+
+  @media only screen and (max-width: 600px) {
+    padding: 50px 0;
+  }
+
   &__container {
     display: flex;
     flex-direction: column;
+
+    @media only screen and (max-width: 1100px) {
+      padding: 0 32px;
+    }
   }
 
   &__title {
@@ -1010,6 +1026,16 @@ body {
 
     @media only screen and (max-width: 1280px) {
       margin-right: 75px;
+    }
+
+    @media only screen and (max-width: 1100px) {
+      text-align: left;
+      margin-right: 0;
+      margin-bottom: 57px;
+    }
+
+    @media only screen and (max-width: 600px) {
+      margin-bottom: 41px;
     }
   }
 
@@ -1035,16 +1061,58 @@ body {
     &--1 {
       top: -50px;
       left: -270px;
+
+      @media only screen and (max-width: 1280px) {
+        z-index: 10;
+      }
+
+      @media only screen and (max-width: 1100px) {
+        top: -24px;
+        left: 65px;
+      }
+
+      @media only screen and (max-width: 600px) {
+        top: -11px;
+        left: 57px;
+      }
     }
 
     &--2 {
       top: 58.5px;
       right: -17px;
+
+      @media only screen and (max-width: 1100px) {
+        z-index: 10;
+
+        top: 273px;
+        left: -62px;
+      }
+
+      @media only screen and (max-width: 600px) {
+        top: 153px;
+        left: -19px;
+      }
     }
 
     &--3 {
       bottom: -192px;
       left: 149px;
+
+      @media only screen and (max-width: 1280px) {
+        z-index: 10;
+        
+        left: 168px;
+      }
+
+      @media only screen and (max-width: 1100px) {
+        top: 145px;
+        left: 243px;
+      }
+
+      @media only screen and (max-width: 600px) {
+        top: 80px;
+        left: 132px;
+      }
     }
   }
 
@@ -1056,6 +1124,10 @@ body {
 
   &__list {
     position: absolute;
+
+    @media only screen and (max-width: 1100px) {
+      display: none;
+    }
   }
 }
 
@@ -1068,6 +1140,10 @@ body {
   &--2 {
     top: 157px;
     left: -360px;
+
+    @media only screen and (max-width: 1280px) {
+      left: -253px;
+    }
   }
 
   &--3 {
@@ -1076,6 +1152,10 @@ body {
 
     li {
       max-width: 344px;
+    }
+
+    @media only screen and (max-width: 1280px) {
+      right: -715px;
     }
   }
 
