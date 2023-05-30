@@ -1355,14 +1355,42 @@ body {
   padding-top: 156px;
   padding-bottom: 205px;
 
+  @media only screen and (max-width: 1280px) {
+    padding: 100px 0;
+  }
+
+  @media only screen and (max-width: 500px) {
+    padding: 74px 0;
+  }
+
   background-color: $color-black;
 
   &__container {
+    position: relative;
     display: flex;
+
+    @media only screen and (max-width: 768px) {
+      padding: 0 34px;
+    }
+
+    @media only screen and (max-width: 500px) {
+      padding: 0 20px;
+
+      flex-direction: column;
+    }
   }
 
   &__info {
     flex: 0 0 50%;
+
+    @media only screen and (max-width: 768px) {
+      margin-right: 22px;
+    }
+
+    @media only screen and (max-width: 500px) {
+      flex: 0 0 100%;
+      margin: 0;
+    }
   }
 
   &__subtitle {
@@ -1371,6 +1399,11 @@ body {
     line-height: 121%;
 
     margin-bottom: 13px;
+
+    @media only screen and (max-width: 768px) {
+      margin-bottom: 11px;
+    }
+
     color: $color-blue;
   }
 
@@ -1378,11 +1411,35 @@ body {
     &:not(:last-child) {
       margin-bottom: 26px;
     }
+
+    @media only screen and (max-width: 768px) {
+      &:not(:last-child) {
+        margin-bottom: 50px;
+      }
+    }
+
+    @media only screen and (max-width: 500px) {
+      &:not(:last-child) {
+        margin-bottom: 32px;
+      }
+    }
   }
 
   &__text-info {
     &:not(:last-child) {
       margin-bottom: 76px;
+    }
+
+    @media only screen and (max-width: 768px) {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+    }
+
+    @media only screen and (max-width: 500px) {
+      position: absolute;
+      bottom: -97px;
+      font-size: 12px;
     }
   }
 
@@ -1390,6 +1447,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+
+    @media only screen and (max-width: 500px) {
+      display: none;
+    }
   }
 
   &__contact {
@@ -1438,12 +1499,26 @@ body {
   &__message {
     resize: none;
     margin-bottom: 90px;
+
+    @media only screen and (max-width: 768px) {
+      margin-bottom: 48px;
+    }
+
+    @media only screen and (max-width: 500px) {
+      margin-bottom: 30px;
+    }
+
     min-height: 88px;
   }
 
   &__button {
     align-self: flex-start;
     margin: 0;
+
+    @media only screen and (max-width: 500px) {
+      margin-bottom: 30px;
+      align-self: stretch;
+    }
   }
 }
 
