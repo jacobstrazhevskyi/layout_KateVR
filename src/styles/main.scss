@@ -1347,3 +1347,144 @@ body {
 }
 
 ////////////////////////////////////////////////////////////////////////////
+
+////////////////////////////////////////////////////////////////////////////
+/// GET IN TOUCH
+
+.getintouch {
+  padding-top: 156px;
+  padding-bottom: 205px;
+
+  background-color: $color-black;
+
+  &__container {
+    display: flex;
+  }
+
+  &__info {
+    flex: 0 0 50%;
+  }
+
+  &__subtitle {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 121%;
+
+    margin-bottom: 13px;
+    color: $color-blue;
+  }
+
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: 26px;
+    }
+  }
+
+  &__text-info {
+    &:not(:last-child) {
+      margin-bottom: 76px;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__contact {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 119%;
+    color: $color-grey-light;
+
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+  }
+
+  &__form {
+    flex: 0 0 50%;
+
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.form-getintouch {
+  & > * {
+    margin-bottom: 24px;
+  }
+
+  &__phone {
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+  }
+
+  &__label {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  &__span {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: $color-grey-light;
+  }
+
+  &__message {
+    resize: none;
+    margin-bottom: 90px;
+    min-height: 88px;
+  }
+
+  &__button {
+    align-self: flex-start;
+    margin: 0;
+  }
+}
+
+.input {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+
+  color: $color-white;
+
+  background: transparent;
+
+  border: none;
+  border-bottom: 1px solid $color-grey-dark;
+
+  outline: none;
+  
+  &:not(:placeholder-shown) {
+    padding-bottom: 6px;
+  }
+
+  &:not(:placeholder-shown) + .form-getintouch__span {
+    transform: translateY(-4px);
+  }
+
+  &:focus {
+    border-bottom: 1px solid $color-blue;
+
+    & + .form-getintouch__span {
+      color: $color-blue;
+    }
+  }
+
+  &:focus:invalid {
+    border-bottom: 1px solid $color-brown;
+
+    & + .form-getintouch__span {
+      color: $color-brown;
+    }
+  }
+}
+
+//////////////////////////////////////////////////////////////////////////////
