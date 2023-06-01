@@ -24,4 +24,7 @@ body {
 a {
   text-decoration: none;
   color: inherit;
+
+  @include hover(color, $color-blue);
+  @include hover(text-decoration, underline);
 }

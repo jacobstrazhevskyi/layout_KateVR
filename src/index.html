@@ -14,34 +14,46 @@
         <div class="header__container _container">
           <div class="header__top">
             <div class="header__functionality">
-              <a href="#" class="header__logo">
-                <img 
-                  class="header__logo-image" 
-                  src="./images/header/logo.png" 
-                  alt="header-logo"
-                >
+              <a href="." class="header__logo">
+                <picture>
+                  <source 
+                    srcset="./images/header/logo-320.png"
+                    type="image/png"
+                    media="(max-width: 430px)"
+                  >
+                  <source 
+                    srcset="./images/header/logo-768.png"
+                    type="image/png"
+                    media="(max-width: 768px)"
+                  >
+                  <img 
+                    class="header__logo-image" 
+                    src="./images/header/logo.png" 
+                    alt="header-logo"
+                  >
+                </picture>
               </a>
               <div class="header__lang-switch">En</div>
             </div>
             <nav class="header__nav">
               <ul class="header__list list-header">
                 <li class="list-header__item">
-                  <a href="#" class="list-header__link">
+                  <a href="#about-us" class="list-header__link">
                     About
                   </a>
                 </li>
                 <li class="list-header__item">
-                  <a href="#" class="list-header__link">
+                  <a href="#tech-features" class="list-header__link">
                     Tech
                   </a>
                 </li>
                 <li class="list-header__item">
-                  <a href="#" class="list-header__link">
+                  <a href="#benefits" class="list-header__link">
                     Benefits
                   </a>
                 </li>
                 <li class="list-header__item">
-                  <a href="#" class="list-header__link">
+                  <a href="#get-in-touch" class="list-header__link">
                     Contact
                   </a>
                 </li>
@@ -72,14 +84,14 @@
                 and unlock infinite motion in any games on any platforms!
               </p>
               <div class="header__cost">1200$</div>
-              <div class="header__play-button play-button">
+              <button class="header__play-button play-button">
                 <img 
                   class="play-button__image" 
                   src="./images/header/play-button.svg" 
                   alt="Play button image"
                 >
                 <div class="play-button__text">Play Video</div>
-              </div>
+              </button>
             </div>
           </div>
           <div class="header__bottom">
@@ -169,7 +181,7 @@
             </ul>
           </div>
         </section>
-        <section class="page__aboutus aboutus">
+        <section class="page__aboutus aboutus" id="about-us">
           <div class="aboutus__container _container">
             <div class="aboutus__top top-aboutus">
               <div class="top-aboutus__video-box">
@@ -248,7 +260,7 @@
             </div>
           </div>
         </section>
-        <section class="page__features features">
+        <section class="page__features features" id="tech-features">
           <div class="features__container _container">
             <h2 class="features__title section-title-custom">TECH <span>SPECS</span></h2>
             <div class="features__device">
@@ -350,7 +362,7 @@
             </div>
           </div>
         </section>
-        <section class="page__whykatloco whykatloco">
+        <section class="page__whykatloco whykatloco" id="benefits">
           <div class="whykatloco__container _container">
             <h2 class="whykatloco__title section-title-centred">WHY <span>KAT LOCO?</span></h2>
             <ul class="whykatloco__list list-whykatloco">
@@ -415,7 +427,7 @@
             <button class="whykatloco__button button">Buy Now</button>
           </div>
         </section>
-        <section class="page__getintouch getintouch">
+        <section class="page__getintouch getintouch" id="get-in-touch">
           <div class="getintouch__container _container">
             <div class="getintouch__info">
               <div class="getintouch__subtitle">Have any questions?</div>
@@ -474,7 +486,7 @@
       </main>
       <footer class="footer">
         <div class="footer__container _container">
-          <a href="#" class="footer__link">
+          <a href="." class="footer__link">
             <picture>
               <source
                 srcset="./images/footer/logo-768.png"
@@ -490,16 +502,16 @@
           <nav class="footer__nav navigation-footer">
             <ul class="navigation-footer__list">
               <li class="navigation-footer__item">
-                <a href="#" class="navigation-footer__link">About</a>
+                <a href="#about-us" class="navigation-footer__link">About</a>
               </li>
               <li class="navigation-footer__item">
-                <a href="#" class="navigation-footer__link">Tech</a>
+                <a href="#tech-features" class="navigation-footer__link">Tech</a>
               </li>
               <li class="navigation-footer__item">
-                <a href="#" class="navigation-footer__link">Benefits</a>
+                <a href="#benefits" class="navigation-footer__link">Benefits</a>
               </li>
               <li class="navigation-footer__item">
-                <a href="#" class="navigation-footer__link">Contact</a>
+                <a href="#get-in-touch" class="navigation-footer__link">Contact</a>
               </li>
             </ul>
           </nav>
@@ -550,7 +562,7 @@
                   media="(max-width: 768px)"
                 >
                 <img 
-                  src="./images/footer/social/02.svg" 
+                  src="./images/footer/social/04.svg" 
                   alt="Reddit" 
                   class="socials-footer__image"
                 >

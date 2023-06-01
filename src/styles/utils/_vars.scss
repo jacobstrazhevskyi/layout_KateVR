@@ -14,6 +14,14 @@ $color-grey-light-2: #f2f2f2;
 
 $color-brown: #860404;
 
+$color-green: #008000;
+
 $color-white: #fff;
 
-$bg-gradient: linear-gradient(100.83deg, #191536 0.67%, #000 100%);
+$bg-gradient: linear-gradient(
+  100.83deg,
+  #191536 0.67%,
+  $color-black-1 100%
+);
+
+$select-color: #4a4a4a;
