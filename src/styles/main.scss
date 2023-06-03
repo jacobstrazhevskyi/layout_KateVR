@@ -90,6 +90,7 @@ body {
   }
 
   &__lang-switch {
+    cursor: pointer;
     position: relative;
     font-family: "Inter";
     font-weight: 500;
@@ -112,6 +113,8 @@ body {
     @media only screen and (max-width: 768px) {
       display: none;
     }
+
+    @include hover(color, $color-white);
   }
 
   &__nav {
@@ -368,10 +371,12 @@ body {
   &__previous {
     cursor: pointer;
     transform: translateX(-10.3rem);
+    @include hover(color, $color-blue);
   }
 
   &__next {
     cursor: pointer;
+    @include hover(color, $color-blue);
   }
 
   &__border-grey {
@@ -859,11 +864,13 @@ body {
 
   &__previous {
     cursor: pointer;
+    @include hover(color, $color-blue);
   }
 
   &__next {
     cursor: pointer;
     transform: translateX(10.3rem);
+    @include hover(color, $color-blue);
   }
 
   &__border-grey {
@@ -985,6 +992,7 @@ body {
   }
 
   &__item {
+    cursor: default;
     font-weight: 900;
     font-size: 64px;
     line-height: 130%;
@@ -1046,6 +1054,8 @@ body {
         display: none;
       }
     }
+
+    @include hover(opacity, 0.7);
 
     span {
       font-family: sans-serif;
