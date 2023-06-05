@@ -7,7 +7,6 @@
     <link href="https://fonts.googleapis.com/css?family=Inter:100,regular,500,700,900" rel="stylesheet">
     <title>KAT VR</title>
     <link rel="stylesheet" href="./styles/main.scss">
-    <script src="index.js" defer></script>
   </head>
   <body>
     <div class="wrapper">
@@ -63,18 +62,44 @@
             </nav>
           </div>
           <div class="header__content">
-            <picture>
-              <source 
-                srcset="./images/header/background-320.png" 
-                type="image/png" 
-                media="(max-width: 430px)"
-              >
-              <img 
-                src="./images/header/background.png" 
-                alt="Header background image" 
-                class="header__background-image"
-              >
-            </picture>
+            <div class="header__slider-pictures">
+              <picture>
+                <source 
+                  srcset="./images/header/background-320.png" 
+                  type="image/png" 
+                  media="(max-width: 430px)"
+                >
+                <img 
+                  src="./images/header/background.png" 
+                  alt="Header background image" 
+                  class="header__background-image header__background-image--1"
+                >
+              </picture>
+              <picture>
+                <source 
+                  srcset="./images/header/background-320-2.png" 
+                  type="image/png" 
+                  media="(max-width: 430px)"
+                >
+                <img 
+                  src="./images/header/background-2.png" 
+                  alt="Header background image" 
+                  class="header__background-image header__background-image--2"
+                >
+              </picture>
+              <picture>
+                <source 
+                  srcset="./images/header/background-320-3.png" 
+                  type="image/png" 
+                  media="(max-width: 430px)"
+                >
+                <img 
+                  src="./images/header/background-3.png" 
+                  alt="Header background image" 
+                  class="header__background-image header__background-image--3"
+                >
+              </picture>
+            </div>
             <div class="header__content-wrapper">
               <h1 class="header__title">
                 THE NEW START OF <br>
@@ -100,7 +125,13 @@
               <a href="#" class="header__faq">FAQ</a>
               <a href="#" class="header__help">Help</a>
             </div>
-            <div class="header__more">More</div>
+            <a 
+              href="#tech-features"
+              class="header__more" 
+              id="not-link"
+            >
+              More
+            </a>
             <div class="header__slider slider">
               <div class="slider__previous">Previous</div>
               <div class="slider__next">Next</div>
@@ -186,24 +217,60 @@
           <div class="aboutus__container _container">
             <div class="aboutus__top top-aboutus">
               <div class="top-aboutus__video-box">
-                <div class="top-aboutus__series-count">1/5</div>
-                <picture>
-                  <source 
-                    srcset="./images/aboutus/video-320.png" 
-                    type="image/png" 
-                    media="(max-width: 600px)"
-                  >
-                  <source 
-                    srcset="./images/aboutus/video-768.png" 
-                    type="image/png" 
-                    media="(max-width: 1000px)"
-                  >
-                  <img 
-                    src="./images/aboutus/video-1920.png" 
-                    alt="Video about us" 
-                    class="top-aboutus__video"
-                  >
-                </picture>
+                <div class="top-aboutus__series-count">1/3</div>
+                <div class="top-aboutus__videos">
+                  <picture>
+                    <source 
+                      srcset="./images/aboutus/video-320.png" 
+                      type="image/png" 
+                      media="(max-width: 600px)"
+                    >
+                    <source 
+                      srcset="./images/aboutus/video-768.png" 
+                      type="image/png" 
+                      media="(max-width: 1000px)"
+                    >
+                    <img 
+                      src="./images/aboutus/video-1920.png" 
+                      alt="Video about us" 
+                      class="top-aboutus__video top-aboutus__video--1"
+                    >
+                  </picture>
+                  <picture>
+                    <source 
+                      srcset="./images/aboutus/video-320.png" 
+                      type="image/png" 
+                      media="(max-width: 600px)"
+                    >
+                    <source 
+                      srcset="./images/aboutus/video-768.png" 
+                      type="image/png" 
+                      media="(max-width: 1000px)"
+                    >
+                    <img 
+                      src="./images/aboutus/video-1920.png" 
+                      alt="Video about us" 
+                      class="top-aboutus__video top-aboutus__video--2"
+                    >
+                  </picture>
+                  <picture>
+                    <source 
+                      srcset="./images/aboutus/video-320.png" 
+                      type="image/png" 
+                      media="(max-width: 600px)"
+                    >
+                    <source 
+                      srcset="./images/aboutus/video-768.png" 
+                      type="image/png" 
+                      media="(max-width: 1000px)"
+                    >
+                    <img 
+                      src="./images/aboutus/video-1920.png" 
+                      alt="Video about us" 
+                      class="top-aboutus__video top-aboutus__video--3"
+                    >
+                  </picture>
+                </div>
                 <div class="top-aboutus__slider top-aboutus-slider">
                   <div class="top-aboutus-slider__previous">Previous</div>
                   <div class="top-aboutus-slider__next">Next</div>
@@ -235,6 +302,92 @@
                   <div class="play-button__text">Play Video</div>
                 </div>
               </div>
+            </div>
+            <div class="aboutus__top top-aboutus top-aboutus--600">
+              <div class="top-aboutus__play-button play-button">
+                <img 
+                  class="play-button__image"
+                  src="./images/header/play-button.svg" 
+                  alt="Play button image"
+                >
+                <div class="play-button__text">Play Video</div>
+              </div>
+              <p class="top-aboutus__text text-1">
+                KAT loco is a foot-based VR locomotion system that gives complete physical control over lower-body
+                actions,
+                allowing you to freely walk, run,
+                and carry out just any other movement in virtual reality.
+              </p>
+              <div class="top-aboutus__video-box">
+                <div class="top-aboutus__series-count">1/3</div>
+                <div class="top-aboutus__videos">
+                  <picture>
+                    <source 
+                      srcset="./images/aboutus/video-320.png" 
+                      type="image/png" 
+                      media="(max-width: 600px)"
+                    >
+                    <source 
+                      srcset="./images/aboutus/video-768.png" 
+                      type="image/png" 
+                      media="(max-width: 1000px)"
+                    >
+                    <img 
+                      src="./images/aboutus/video-1920.png" 
+                      alt="Video about us" 
+                      class="top-aboutus__video top-aboutus__video--1"
+                    >
+                  </picture>
+                  <picture>
+                    <source 
+                      srcset="./images/aboutus/video-320.png" 
+                      type="image/png" 
+                      media="(max-width: 600px)"
+                    >
+                    <source 
+                      srcset="./images/aboutus/video-768.png" 
+                      type="image/png" 
+                      media="(max-width: 1000px)"
+                    >
+                    <img 
+                      src="./images/aboutus/video-1920.png" 
+                      alt="Video about us" 
+                      class="top-aboutus__video top-aboutus__video--2"
+                    >
+                  </picture>
+                  <picture>
+                    <source 
+                      srcset="./images/aboutus/video-320.png" 
+                      type="image/png" 
+                      media="(max-width: 600px)"
+                    >
+                    <source 
+                      srcset="./images/aboutus/video-768.png" 
+                      type="image/png" 
+                      media="(max-width: 1000px)"
+                    >
+                    <img 
+                      src="./images/aboutus/video-1920.png" 
+                      alt="Video about us" 
+                      class="top-aboutus__video top-aboutus__video--3"
+                    >
+                  </picture>
+                </div>
+                <div class="top-aboutus__slider top-aboutus-slider">
+                  <div class="top-aboutus-slider__previous">Previous</div>
+                  <div class="top-aboutus-slider__next">Next</div>
+                  <div class="top-aboutus-slider__border-grey"></div>
+                  <div class="top-aboutus-slider__border-blue"></div>
+                </div>
+                <div class="top-aboutus__dotted-slider top-aboutus-dotted-slider">
+                  <div class="top-aboutus-dotted-slider__dot top-aboutus-dotted-slider__dot--active"></div>
+                  <div class="top-aboutus-dotted-slider__dot"></div>
+                  <div class="top-aboutus-dotted-slider__dot"></div>
+                  <div class="top-aboutus-dotted-slider__dot"></div>
+                  <div class="top-aboutus-dotted-slider__dot"></div>
+                </div>
+              </div>
+              <h2 class="top-aboutus__title section-title">ABOUT <span>PRODUCT</span></h2>
             </div>
             <div class="aboutus__bottom bottom-aboutus">
               <div class="bottom-aboutus__content">
@@ -578,5 +731,6 @@
         </div>
       </footer>
     </div>
+    <script src="index.js" defer></script>
   </body>
 </html>
