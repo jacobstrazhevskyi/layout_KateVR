@@ -12,3 +12,14 @@ node_modules
 backstop_data
 dist
 .cache
+
+# JSON files
+.bemlintrc.json
+.editorconfig
+.eslintignore
+.eslintrc.js
+.linthtmlrc.json
+.stylelintignore
+.stylelintrc.js
+LICENSE
+package-lock.json
