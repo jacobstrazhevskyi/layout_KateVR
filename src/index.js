@@ -1,5 +1,5 @@
 'use strict';
-/* eslint-disable no-console */
+/* eslint-disable max-len */
 /*                    SCROLL TO TOP BUTTON                              */
 
 const scrollUpButton = document.getElementById('scroll-up-button');
@@ -63,7 +63,6 @@ for (const sliderButton of sliderButtons) {
         picturesAboutUs[picturesCountAboutUs - 1].classList.add('pic-hidden');
         picturesCountAboutUs += 1;
         sliderAboutusBlueLine.style.width = `${picturesCountAboutUs * 6.9}rem`;
-        // eslint-disable-next-line max-len
         picturesAboutUs[picturesCountAboutUs - 1].classList.remove('pic-hidden');
         picturesAboutUs[picturesCountAboutUs - 1].classList.add('pic-shown');
         picturesAboutUs[picturesCountAboutUs - 1].style.display = 'block';
@@ -77,7 +76,6 @@ for (const sliderButton of sliderButtons) {
         picturesAboutUs[picturesCountAboutUs - 1].classList.add('pic-hidden');
         picturesCountAboutUs -= 1;
         sliderAboutusBlueLine.style.width = `${picturesCountAboutUs * 6.9}rem`;
-        // eslint-disable-next-line max-len
         picturesAboutUs[picturesCountAboutUs - 1].classList.remove('pic-hidden');
         picturesAboutUs[picturesCountAboutUs - 1].classList.add('pic-shown');
         picturesAboutUs[picturesCountAboutUs - 1].style.display = 'block';
@@ -141,4 +139,47 @@ for (const sliderButton of sliderButtons) {
       secondPreviousButton.style.cursor = 'pointer';
     }
   });
+}
+
+/*                      TECH FEATURES                            */
+
+const featuresButtons = document.querySelectorAll('.features__decoration');
+const contentElements = document.querySelectorAll('.list-features');
+
+if (window.innerWidth <= 1100) {
+  const featuresButtonsStatusArray = [];
+
+  class FeatureShowButtonStatus {
+    constructor(id, openCloseStatus, content, image) {
+      this.id = id;
+      this.status = openCloseStatus;
+      this.content = content;
+    }
+  }
+
+  for (let i = 0; i < featuresButtons.length; i++) {
+    featuresButtonsStatusArray.push(
+      new FeatureShowButtonStatus(
+        featuresButtons[i].classList[1],
+        'closed',
+        contentElements[i].classList[2]
+      )
+    );
+
+    featuresButtons[i].addEventListener('click', () => {
+      for (let j = 0; j < featuresButtonsStatusArray.length; j++) {
+        if (featuresButtonsStatusArray[j].id === featuresButtons[i].classList[1]) {
+          if (featuresButtonsStatusArray[j].status === 'closed') {
+            document.querySelector(`.${featuresButtonsStatusArray[j].content}`).style.opacity = 1;
+            featuresButtons[i].style.opacity = 0;
+            featuresButtonsStatusArray[j].status = 'opened';
+          } else if (featuresButtonsStatusArray[j].status === 'opened') {
+            document.querySelector(`.${featuresButtonsStatusArray[j].content}`).style.opacity = 0;
+            featuresButtons[i].style.opacity = 1;
+            featuresButtonsStatusArray[j].status = 'closed';
+          }
+        }
+      }
+    });
+  }
 }
