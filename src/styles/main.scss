@@ -566,9 +566,8 @@ body {
 }
 
 .adventage {
+  @include hover((transform), (scale(1.1)));
   &__icon {
-    @include hover((transform), (scale(1.1)));
-
     margin-bottom: 21px;
 
     @media only screen and (max-width: 430px) {
@@ -1543,9 +1542,9 @@ body {
 }
 
 .item-whykatloco {
-  &__icon {
-    @include hover((transform), (scale(1.1)));
+  @include hover((transform), (scale(1.05)));
 
+  &__icon {
     @media only screen and (max-width: 320px) {
       display: none;
     }
@@ -1991,7 +1990,10 @@ body {
     text-decoration: none !important;
 
     &:hover .socials-footer__image {
-      filter: contrast(1.2) saturate(1.5) brightness(0.6) hue-rotate(180deg);
+      // filter: invert(100%) 
+      // sepia(100%) hue-rotate(180deg) 
+      // saturate(10000%) drop-shadow(0 0 0.75rem #05c2df);
+      filter: grayscale(100%) contrast(150%) drop-shadow(0 0 0.5rem #05c2df);
     }
 
     &:not(:first-child) {
