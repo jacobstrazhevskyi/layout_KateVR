@@ -378,6 +378,7 @@ body {
   }
 
   &__previous {
+    user-select: none;
     transition: all 0.3s;
     color: $color-grey-dark-1;
     cursor: default;
@@ -385,6 +386,7 @@ body {
   }
 
   &__next {
+    user-select: none;
     transition: all 0.3s;
     cursor: pointer;
   }
@@ -912,12 +914,14 @@ body {
   }
 
   &__previous {
+    user-select: none;
     transition: all 0.3s;
     color: $color-grey-dark-1;
     cursor: pointer;
   }
 
   &__next {
+    user-select: none;
     transition: all 0.3s;
     cursor: pointer;
     transform: translateX(10.3rem);
@@ -1043,6 +1047,7 @@ body {
   }
 
   &__item {
+    user-select: none;
     cursor: default;
     font-weight: 900;
     font-size: 64px;
