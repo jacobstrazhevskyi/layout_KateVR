@@ -41,7 +41,6 @@ h3 {
 }
 
 .section-title-centred {
-  @include hover(transform, skew(10deg));
   text-align: center;
 
   @media only screen and (max-width: 768px) {
@@ -62,8 +61,6 @@ h3 {
 }
 
 .section-title-custom {
-  @include hover(transform, skew(10deg));
-
   @media only screen and (max-width: 768px) {
     font-size: 21px;
   }
