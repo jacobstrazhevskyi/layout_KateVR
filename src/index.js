@@ -17,6 +17,8 @@ function scroll() {
 document.onscroll = () => {
   if (window.pageYOffset < 1121) {
     scrollUpButton.style.display = 'none';
+  } else if (window.innerWidth <= '500') {
+    scrollUpButton.style.display = 'none';
   } else {
     scrollUpButton.style.display = 'block';
   }

@@ -1755,6 +1755,8 @@ body {
     font-size: 14px;
     line-height: 150%;
     color: $color-grey-light;
+
+    transition: all 0.3s;
   }
 
   &__message {
@@ -1788,6 +1790,8 @@ body {
   font-weight: 400;
   font-size: 16px;
   line-height: 150%;
+
+  transition: border-bottom 0.3s;
 
   color: $color-white;
 
@@ -1837,26 +1841,17 @@ body {
   background: transparent;
   border: none;
 
-  bottom: 305px;
-  right: 238px;
+  bottom: 150px;
+  right: 100px;
 
   @include hover((filter), (hue-rotate(180deg) brightness(90%) saturate(120%)));
 
-  @media only screen and (max-width: 1280px) {
-    bottom: 201px;
-    right: 110px;
-  }
-
   @media only screen and (max-width: 1110px) {
-    right: 15px;
+    right: 30px;
   }
 
   @media only screen and (max-width: 550px) {
-    right: 0;
-  }
-
-  @media only screen and (max-width: 500px) {
-    display: none;
+    right: 5px;
   }
 }
 
