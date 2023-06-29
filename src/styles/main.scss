@@ -205,8 +205,6 @@ body {
   }
 
   &__background-image {
-    @include hover((transform), (scale(0.9)));
-
     position: absolute;
     right: 0;
     top: 0;
