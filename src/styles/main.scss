@@ -114,7 +114,7 @@ body {
       display: none;
     }
 
-    @include hover(color, $color-white);
+    @include hover((color), ($color-white));
   }
 
   &__nav {
@@ -205,7 +205,7 @@ body {
   }
 
   &__background-image {
-    @include hover(transform, scale(0.9));
+    @include hover((transform), (scale(0.9)));
 
     position: absolute;
     right: 0;
@@ -365,8 +365,7 @@ body {
       transform: rotate(-180deg) translateX(50%) translateY(-5px);
     }
 
-    @include hover(color, $color-white);
-    @include hover(transform, scale(1.1));
+    @include hover((color, transform), ($color-white, scale(1.1)));
   }
 }
 
@@ -568,7 +567,7 @@ body {
 
 .adventage {
   &__icon {
-    @include hover(transform, scale(1.1));
+    @include hover((transform), (scale(1.1)));
 
     margin-bottom: 21px;
 
@@ -1109,7 +1108,7 @@ body {
       }
     }
 
-    @include hover(opacity, 0.7);
+    @include hover((opacity), (0.7));
 
     span {
       font-family: sans-serif;
@@ -1542,7 +1541,7 @@ body {
 
 .item-whykatloco {
   &__icon {
-    @include hover(transform, scale(1.1));
+    @include hover((transform), (scale(1.1)));
 
     @media only screen and (max-width: 320px) {
       display: none;
@@ -1839,7 +1838,7 @@ body {
   bottom: 305px;
   right: 238px;
 
-  @include hover(filter,  hue-rotate(180deg) brightness(90%) saturate(120%));
+  @include hover((filter), (hue-rotate(180deg) brightness(90%) saturate(120%)));
 
   @media only screen and (max-width: 1280px) {
     bottom: 201px;
