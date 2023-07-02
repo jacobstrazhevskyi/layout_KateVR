@@ -379,11 +379,13 @@ body {
     cursor: pointer;
     user-select: none;
 
+    padding-right: 15px;
+
     @include hover((color), ($color-white));
   }
 
   &__avalibe-list {
-    transition: all 0.3s;
+    transition: all 0.3s, transform 0.3s ease-in-out;
     user-select: none;
     background-color: $lang-switch-bg-color;
     padding-bottom: 5px;
@@ -394,14 +396,14 @@ body {
     border-top: none;
     opacity: 0;
     visibility: hidden;
-    transform: translateX(-5px) translateY(-135px);
+    transform: translateY(-160px);
     max-width: fit-content;
   }
 
   &__avalibe-list--active {
     opacity: 1;
     visibility: visible;
-    transform: translateX(-5px) translateY(0);
+    transform: translateY(0);
   }
 
   &__avalibe-item {
