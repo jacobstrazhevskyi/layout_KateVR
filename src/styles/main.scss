@@ -90,16 +90,16 @@ body {
   }
 
   &__lang-switch {
-    cursor: pointer;
     position: relative;
     font-family: "Inter";
     font-weight: 500;
-    font-size: 1.6rem;
+    font-size: 16px;
     line-height: 130%;
     color: $color-blue;
     margin-left: 3.5rem;
     transform: translateY(-3px);
 
+    height: 16px;
     width: 34px;
 
     &::after {
@@ -108,13 +108,18 @@ body {
       bottom: 0;
       right: 0;
       @extend %triangle;
+      transition: all 0.3s;
+
+      @include hover((background-color), ($color-white));
+    }
+
+    &--active::after {
+      transform: translateY(-2px) rotate(360deg);
     }
 
     @media only screen and (max-width: 768px) {
       display: none;
     }
-
-    @include hover((color), ($color-white));
   }
 
   &__nav {
@@ -364,6 +369,54 @@ body {
     }
 
     @include hover((color, transform), ($color-white, scale(1.1)));
+  }
+}
+
+.switch-language {
+  z-index: 100;
+
+  &__selected {
+    cursor: pointer;
+    user-select: none;
+
+    @include hover((color), ($color-white));
+  }
+
+  &__avalibe-list {
+    transition: all 0.3s;
+    user-select: none;
+    background-color: $lang-switch-bg-color;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-top: 5px;
+    padding-right: 10px;
+    border: 1px solid;
+    border-top: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-5px) translateY(-135px);
+    max-width: fit-content;
+  }
+
+  &__avalibe-list--active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-5px) translateY(0);
+  }
+
+  &__avalibe-item {
+    user-select: none;
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-bottom: 5px;
+    }
+
+    &:first-child {
+      margin-top: 5px;
+    }
+
+    @include hover((color), ($color-white));
   }
 }
 

@@ -1,4 +1,5 @@
 'use strict';
+/* eslint-disable no-console */
 /* eslint-disable max-len */
 /*                    SCROLL TO TOP BUTTON                              */
 
@@ -184,4 +185,32 @@ if (window.innerWidth <= 1100) {
       }
     });
   }
+}
+
+/*                       LANGUAGE SWITCH BUTTON                               */
+
+const languageSwitchButton = document.getElementById('language-switch-button');
+const languagesArray = document.querySelectorAll('.switch-language__avalibe-item');
+
+languageSwitchButton.addEventListener('click', (event) => {
+  if (!document.querySelector('.header__lang-switch').classList.toString().split(' ').includes('header__lang-switch--active')) {
+    document.querySelector('.header__lang-switch').classList.add('header__lang-switch--active');
+    document.querySelector('.switch-language__avalibe-list').classList.add('switch-language__avalibe-list--active');
+  } else if (document.querySelector('.header__lang-switch').classList.toString().split(' ').includes('header__lang-switch--active')) {
+    document.querySelector('.header__lang-switch').classList.remove('header__lang-switch--active');
+    document.querySelector('.switch-language__avalibe-list').classList.remove('switch-language__avalibe-list--active');
+  }
+});
+
+for (let i = 0; i < languagesArray.length; i++) {
+  languagesArray[i].addEventListener('click', () => {
+    const languagePrev = document.querySelector('.switch-language__selected').textContent;
+    const languageSelectedNow = languagesArray[i].textContent;
+
+    languagesArray[i].textContent = languagePrev;
+    document.querySelector('.switch-language__selected').textContent = languageSelectedNow;
+
+    document.querySelector('.header__lang-switch').classList.remove('header__lang-switch--active');
+    document.querySelector('.switch-language__avalibe-list').classList.remove('switch-language__avalibe-list--active');
+  });
 }
