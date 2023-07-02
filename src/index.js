@@ -214,3 +214,35 @@ for (let i = 0; i < languagesArray.length; i++) {
     document.querySelector('.switch-language__avalibe-list').classList.remove('switch-language__avalibe-list--active');
   });
 }
+
+/*                                HEADER VIDEO POPUP                                                */
+
+const headerVideoPlayButton = document.getElementById('header-video-play-button');
+const headerVideoCloseButton = document.getElementById('header-video-popup-close-button');
+
+const headerVideoPopup = document.getElementById('header-video-popup');
+
+headerVideoPlayButton.addEventListener('click', () => {
+  headerVideoPopup.style.visibility = 'visible';
+  headerVideoPopup.style.opacity = 1;
+});
+
+headerVideoCloseButton.addEventListener('click', () => {
+  headerVideoPopup.style.opacity = 0;
+
+  setTimeout(function() {
+    headerVideoPopup.style.visibility = 'hidden';
+  }, 300);
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.keyCode === 27) {
+    if (headerVideoPopup.style.opacity === '1') {
+      headerVideoPopup.style.opacity = 0;
+
+      setTimeout(function() {
+        headerVideoPopup.style.visibility = 'hidden';
+      }, 300);
+    }
+  }
+});
