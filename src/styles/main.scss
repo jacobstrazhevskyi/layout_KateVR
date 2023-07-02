@@ -110,6 +110,8 @@ body {
       @extend %triangle;
       transition: all 0.3s;
 
+      z-index: 1;
+
       @include hover((background-color), ($color-white));
     }
 
@@ -376,9 +378,10 @@ body {
   z-index: 100;
 
   &__selected {
+    position: relative;
     cursor: pointer;
     user-select: none;
-
+    z-index: 2;
     padding-right: 15px;
 
     @include hover((color), ($color-white));
