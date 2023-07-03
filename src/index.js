@@ -246,3 +246,21 @@ document.addEventListener('keydown', (event) => {
     }
   }
 });
+
+/*                                     MENU BURGER                                                */
+
+const menuBurger = document.getElementById('header-menu');
+const menuBurgerButton = document.getElementById('menu-burger');
+let menuBurgerActived = false;
+
+menuBurgerButton.addEventListener('click', () => {
+  if (!menuBurgerActived) {
+    menuBurgerButton.classList.add('header__nav--active');
+    menuBurger.classList.add('header-menu--active');
+    menuBurgerActived = true;
+  } else if (menuBurgerActived) {
+    menuBurgerButton.classList.remove('header__nav--active');
+    menuBurger.classList.remove('header-menu--active');
+    menuBurgerActived = false;
+  }
+});
