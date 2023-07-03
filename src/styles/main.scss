@@ -2289,6 +2289,10 @@ body {
 
     &:first-child {
       margin-top: 97px;
+
+      @media only screen and (max-width: 500px) {
+        margin-top: 75px;
+      }
     }
 
     @include hover((background-color), ($color-purple-dark));
@@ -2309,6 +2313,10 @@ body {
 
     padding-left: 155px;
 
+    @media only screen and (max-width: 500px) {
+      padding-left: 21px;
+    }
+
     text-decoration: none !important;
   }
 
@@ -2327,6 +2335,10 @@ body {
     outline: none;
 
     padding-left: 155px;
+
+    @media only screen and (max-width: 500px) {
+      padding-left: 21px;
+    }
   }
 }
 
