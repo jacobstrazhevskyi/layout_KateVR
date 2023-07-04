@@ -255,6 +255,7 @@ document.addEventListener('keydown', (event) => {
 
 const menuBurger = document.getElementById('header-menu');
 const menuBurgerButton = document.getElementById('menu-burger');
+const menuBurgerItemsList = document.querySelectorAll('.header-menu-list__item');
 let menuBurgerActived = false;
 
 if (window.innerWidth <= 768) {
@@ -273,4 +274,16 @@ if (window.innerWidth <= 768) {
       menuBurgerActived = false;
     }
   });
+
+  for (let i = 0; i < menuBurgerItemsList.length; i++) {
+    menuBurgerItemsList[i].addEventListener('click', () => {
+      if (menuBurgerItemsList[i].querySelector('.header-menu-list__link').classList.contains('header-menu-list__link')) {
+        menuBurgerButton.classList.remove('header__nav--active');
+        menuBurger.classList.remove('header-menu--active');
+        document.querySelector('body').style.overflow = 'auto';
+        document.querySelector('.header__top').removeAttribute('style');
+        menuBurgerActived = false;
+      }
+    });
+  }
 }
