@@ -230,6 +230,8 @@ headerVideoPlayButton.addEventListener('click', () => {
 headerVideoCloseButton.addEventListener('click', () => {
   headerVideoPopup.style.opacity = 0;
 
+  document.getElementById('popup-video-iframe').contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+
   setTimeout(function() {
     headerVideoPopup.style.visibility = 'hidden';
   }, 300);
@@ -239,6 +241,8 @@ document.addEventListener('keydown', (event) => {
   if (event.keyCode === 27) {
     if (headerVideoPopup.style.opacity === '1') {
       headerVideoPopup.style.opacity = 0;
+
+      document.getElementById('popup-video-iframe').contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
 
       setTimeout(function() {
         headerVideoPopup.style.visibility = 'hidden';
