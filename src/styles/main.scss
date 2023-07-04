@@ -111,8 +111,6 @@ body {
       transition: all 0.3s;
 
       z-index: 1;
-
-      @include hover((background-color), ($color-white));
     }
 
     &--active::after {
@@ -2214,6 +2212,7 @@ body {
       height: 2px;
       background-color: $color-blue;
       transform: translate(-50%, -50%) rotate(45deg);
+      transition: background-color 0.3s;
     }
 
     &::before {
@@ -2225,6 +2224,12 @@ body {
       height: 2px;
       background-color: $color-blue;
       transform: translate(-50%, -50%) rotate(-45deg);
+      transition: background-color 0.3s;
+    }
+
+    &:hover::before,
+    &:hover::after {
+      background-color: $color-white;
     }
   }
 
