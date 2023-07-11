@@ -160,11 +160,16 @@ if (window.innerWidth <= 1100) {
       for (let j = 0; j < featuresButtonsStatusArray.length; j++) {
         if (featuresButtonsStatusArray[j].id === featuresButtons[i].classList[1]) {
           if (featuresButtonsStatusArray[j].status === 'closed') {
+            document.querySelector(`.${featuresButtonsStatusArray[j].content}`).style.display = 'block';
             document.querySelector(`.${featuresButtonsStatusArray[j].content}`).style.opacity = 1;
             featuresButtons[i].style.opacity = 0;
             featuresButtonsStatusArray[j].status = 'opened';
           } else if (featuresButtonsStatusArray[j].status === 'opened') {
             document.querySelector(`.${featuresButtonsStatusArray[j].content}`).style.opacity = 0;
+
+            setTimeout(() => {
+              document.querySelector(`.${featuresButtonsStatusArray[j].content}`).style.display = 'none';
+            }, 200);
             featuresButtons[i].style.opacity = 1;
             featuresButtonsStatusArray[j].status = 'closed';
           }
