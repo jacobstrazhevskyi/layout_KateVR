@@ -43,7 +43,7 @@ const picturesCountAboutUsDisplay = document.querySelector(
 );
 
 let picturesCountAboutUs = 1;
-const picturesAboutUs = document.querySelectorAll('.top-aboutus__video');
+const picturesAboutUs = document.querySelectorAll('.top-aboutus__video--not-swipe-slider');
 
 let picturesHeaderCount = 1;
 const picturesHeader = document.querySelectorAll('.header__background-image');
@@ -55,12 +55,15 @@ const sliderButtons = [
   secondNextButton,
 ];
 
+picturesHeader[0].style.display = 'block';
+picturesAboutUs[0].style.display = 'block';
+
 for (const sliderButton of sliderButtons) {
   sliderButton.addEventListener('click', () => {
     if (sliderButton.classList[0].length > 16) {
       if (sliderButton
         .textContent
-        .toLowerCase() === 'next' && picturesCountAboutUs < 3
+        .toLowerCase() === 'next' && picturesCountAboutUs < picturesAboutUs.length
       ) {
         picturesAboutUs[picturesCountAboutUs - 1].classList.remove('pic-shown');
         picturesAboutUs[picturesCountAboutUs - 1].classList.add('pic-hidden');
@@ -87,7 +90,7 @@ for (const sliderButton of sliderButtons) {
     } else {
       if (sliderButton
         .textContent
-        .toLowerCase() === 'next' && picturesHeaderCount < 3
+        .toLowerCase() === 'next' && picturesHeaderCount < picturesHeader.length
       ) {
         picturesHeader[picturesHeaderCount - 1].classList.remove('pic-shown');
         picturesHeader[picturesHeaderCount - 1].classList.add('pic-hidden');
@@ -110,7 +113,7 @@ for (const sliderButton of sliderButtons) {
       }
     }
 
-    if (picturesHeaderCount === 3) {
+    if (picturesHeaderCount === picturesHeader.length) {
       nextButton.style.color = '#484848';
       nextButton.style.cursor = 'default';
     } else {
@@ -126,7 +129,7 @@ for (const sliderButton of sliderButtons) {
       previousButton.style.cursor = 'pointer';
     }
 
-    if (picturesCountAboutUs === 3) {
+    if (picturesCountAboutUs === picturesAboutUs.length) {
       secondNextButton.style.color = '#484848';
       secondNextButton.style.cursor = 'default';
     } else {
@@ -334,4 +337,66 @@ if (window.innerWidth <= 768) {
       languageMenuMobileActived = false;
     });
   }
+}
+
+/*                             SWIPE SLIDER                                           */
+
+const slider = (window.innerWidth > 600) ? document.querySelector('.top-aboutus__videos') : document.querySelector('.top-aboutus--690__videos');
+const slides = slider.querySelectorAll('.top-aboutus__video');
+
+const slidesDotsArray = (window.innerWidth > 690) ? document.querySelectorAll('.top-aboutus-dotted-slider__dot') : document.querySelectorAll('.top-aboutus-dotted-slider__dot--690');
+
+let startX;
+
+let currentSlide = 0;
+let prevSlide;
+
+function showNextSlide() {
+  // slides[currentSlide].style.display = 'none';
+  prevSlide = currentSlide;
+  currentSlide = (currentSlide + 1) % slides.length;
+
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.marginLeft = `-${currentSlide}00%`;
+  }
+
+  // slides[currentSlide].style.display = 'block';
+
+  slidesDotsArray[prevSlide].classList.remove('top-aboutus-dotted-slider__dot--active');
+  slidesDotsArray[currentSlide].classList.add('top-aboutus-dotted-slider__dot--active');
+}
+
+function showPrevSlide() {
+  // slides[currentSlide].style.display = 'none';
+  prevSlide = currentSlide;
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.marginLeft = `-${currentSlide}00%`;
+  }
+  // slides[currentSlide].style.display = 'block';
+
+  slidesDotsArray[prevSlide].classList.remove('top-aboutus-dotted-slider__dot--active');
+  slidesDotsArray[currentSlide].classList.add('top-aboutus-dotted-slider__dot--active');
+}
+
+if (window.innerWidth <= 768) {
+  slider.addEventListener('touchstart', (event) => {
+    startX = event.touches[0].clientX;
+  });
+
+  slider.addEventListener('touchend', (event) => {
+    const endX = event.changedTouches[0].clientX;
+    const diffX = startX - endX;
+
+    if (Math.abs(diffX) > 50) {
+      if (diffX > 0) {
+        // Swipe Left
+        showNextSlide();
+      } else {
+        // Swipe Right
+        showPrevSlide();
+      }
+    }
+  });
 }
