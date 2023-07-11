@@ -63,11 +63,15 @@ for (const sliderButton of sliderButtons) {
     if (sliderButton.classList[0].length > 16) {
       if (sliderButton
         .textContent
-        .toLowerCase() === 'next' && picturesCountAboutUs < picturesAboutUs.length
+        .toLowerCase() === 'next'
       ) {
         picturesAboutUs[picturesCountAboutUs - 1].classList.remove('pic-shown');
         picturesAboutUs[picturesCountAboutUs - 1].classList.add('pic-hidden');
         picturesCountAboutUs += 1;
+
+        if (picturesCountAboutUs > picturesAboutUs.length) {
+          picturesCountAboutUs = 1;
+        }
         sliderAboutusBlueLine.style.width = `${picturesCountAboutUs * 6.9}rem`;
         picturesAboutUs[picturesCountAboutUs - 1].classList.remove('pic-hidden');
         picturesAboutUs[picturesCountAboutUs - 1].classList.add('pic-shown');
@@ -76,11 +80,15 @@ for (const sliderButton of sliderButtons) {
       } else if (
         sliderButton
           .textContent
-          .toLowerCase() === 'previous' && picturesCountAboutUs > 1
+          .toLowerCase() === 'previous'
       ) {
         picturesAboutUs[picturesCountAboutUs - 1].classList.remove('pic-shown');
         picturesAboutUs[picturesCountAboutUs - 1].classList.add('pic-hidden');
         picturesCountAboutUs -= 1;
+
+        if (picturesCountAboutUs < 1) {
+          picturesCountAboutUs = picturesAboutUs.length;
+        }
         sliderAboutusBlueLine.style.width = `${picturesCountAboutUs * 6.9}rem`;
         picturesAboutUs[picturesCountAboutUs - 1].classList.remove('pic-hidden');
         picturesAboutUs[picturesCountAboutUs - 1].classList.add('pic-shown');
@@ -90,59 +98,35 @@ for (const sliderButton of sliderButtons) {
     } else {
       if (sliderButton
         .textContent
-        .toLowerCase() === 'next' && picturesHeaderCount < picturesHeader.length
+        .toLowerCase() === 'next'
       ) {
         picturesHeader[picturesHeaderCount - 1].classList.remove('pic-shown');
         picturesHeader[picturesHeaderCount - 1].classList.add('pic-hidden');
         picturesHeaderCount += 1;
+
+        if (picturesHeaderCount > picturesHeader.length) {
+          picturesHeaderCount = 1;
+        }
         sliderHeaderBlueLine.style.width = `${picturesHeaderCount * 6.9}rem`;
         picturesHeader[picturesHeaderCount - 1].classList.remove('pic-hidden');
         picturesHeader[picturesHeaderCount - 1].classList.add('pic-shown');
         picturesHeader[picturesHeaderCount - 1].style.display = 'block';
       } else if (sliderButton
         .textContent
-        .toLowerCase() === 'previous' && picturesHeaderCount > 1
+        .toLowerCase() === 'previous'
       ) {
         picturesHeader[picturesHeaderCount - 1].classList.remove('pic-shown');
         picturesHeader[picturesHeaderCount - 1].classList.add('pic-hidden');
         picturesHeaderCount -= 1;
+
+        if (picturesHeaderCount < 1) {
+          picturesHeaderCount = picturesHeader.length;
+        }
         sliderHeaderBlueLine.style.width = `${picturesHeaderCount * 6.9}rem`;
         picturesHeader[picturesHeaderCount - 1].classList.remove('pic-hidden');
         picturesHeader[picturesHeaderCount - 1].classList.add('pic-shown');
         picturesHeader[picturesHeaderCount - 1].style.display = 'block';
       }
-    }
-
-    if (picturesHeaderCount === picturesHeader.length) {
-      nextButton.style.color = '#484848';
-      nextButton.style.cursor = 'default';
-    } else {
-      nextButton.style.color = '#fff';
-      nextButton.style.cursor = 'pointer';
-    }
-
-    if (picturesHeaderCount === 1) {
-      previousButton.style.color = '#484848';
-      previousButton.style.cursor = 'default';
-    } else {
-      previousButton.style.color = '#fff';
-      previousButton.style.cursor = 'pointer';
-    }
-
-    if (picturesCountAboutUs === picturesAboutUs.length) {
-      secondNextButton.style.color = '#484848';
-      secondNextButton.style.cursor = 'default';
-    } else {
-      secondNextButton.style.color = '#fff';
-      secondNextButton.style.cursor = 'pointer';
-    }
-
-    if (picturesCountAboutUs === 1) {
-      secondPreviousButton.style.color = '#484848';
-      secondPreviousButton.style.cursor = 'default';
-    } else {
-      secondPreviousButton.style.color = '#fff';
-      secondPreviousButton.style.cursor = 'pointer';
     }
   });
 }
