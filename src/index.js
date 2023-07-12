@@ -1,6 +1,6 @@
 'use strict';
-/* eslint-disable no-console */
 /* eslint-disable max-len */
+/* eslint-disable no-console */
 /*                    SCROLL TO TOP BUTTON                              */
 
 const scrollUpButton = document.getElementById('scroll-up-button');
@@ -136,32 +136,35 @@ for (const sliderButton of sliderButtons) {
 const featuresButtons = document.querySelectorAll('.features__decoration');
 const contentElements = document.querySelectorAll('.list-features');
 
-if (window.innerWidth <= 1100) {
-  const featuresButtonsStatusArray = [];
+const featuresButtonsStatusArray = [];
 
-  class FeatureShowButtonStatus {
-    constructor(id, openCloseStatus, content, image) {
-      this.id = id;
-      this.status = openCloseStatus;
-      this.content = content;
-    }
+class FeatureShowButtonStatus {
+  constructor(id, openCloseStatus, content, image) {
+    this.id = id;
+    this.status = openCloseStatus;
+    this.content = content;
   }
+}
 
-  for (let i = 0; i < featuresButtons.length; i++) {
-    featuresButtonsStatusArray.push(
-      new FeatureShowButtonStatus(
-        featuresButtons[i].classList[1],
-        'closed',
-        contentElements[i].classList[2]
-      )
-    );
+for (let i = 0; i < featuresButtons.length; i++) {
+  featuresButtonsStatusArray.push(
+    new FeatureShowButtonStatus(
+      featuresButtons[i].classList[1],
+      'closed',
+      contentElements[i].classList[2]
+    )
+  );
 
-    featuresButtons[i].addEventListener('click', () => {
+  featuresButtons[i].addEventListener('click', () => {
+    if (window.innerWidth <= 1100) {
       for (let j = 0; j < featuresButtonsStatusArray.length; j++) {
         if (featuresButtonsStatusArray[j].id === featuresButtons[i].classList[1]) {
           if (featuresButtonsStatusArray[j].status === 'closed') {
             document.querySelector(`.${featuresButtonsStatusArray[j].content}`).style.display = 'block';
-            document.querySelector(`.${featuresButtonsStatusArray[j].content}`).style.opacity = 1;
+
+            setTimeout(() => {
+              document.querySelector(`.${featuresButtonsStatusArray[j].content}`).style.opacity = 1;
+            }, 1);
             featuresButtons[i].style.opacity = 0;
             featuresButtonsStatusArray[j].status = 'opened';
           } else if (featuresButtonsStatusArray[j].status === 'opened') {
@@ -175,8 +178,8 @@ if (window.innerWidth <= 1100) {
           }
         }
       }
-    });
-  }
+    }
+  });
 }
 
 /*                       LANGUAGE SWITCH BUTTON                               */
@@ -258,10 +261,8 @@ const languageMenuMobile = document.getElementById('header-language-menu-mobile'
 
 let languageMenuMobileActived = false;
 
-console.log(menuBurgerItemsList);
-
-if (window.innerWidth <= 768) {
-  menuBurgerButton.addEventListener('click', () => {
+menuBurgerButton.addEventListener('click', () => {
+  if (window.innerWidth <= 768) {
     if (languageMenuMobileActived) {
       languageMenuMobile.classList.remove('header-language-menu--active');
       menuBurgerButton.classList.add('header__nav--active');
@@ -293,10 +294,12 @@ if (window.innerWidth <= 768) {
       document.querySelector('.header__top').removeAttribute('style');
       menuBurgerActived = false;
     }
-  });
+  }
+});
 
-  for (let i = 0; i < menuBurgerItemsList.length; i++) {
-    menuBurgerItemsList[i].addEventListener('click', () => {
+for (let i = 0; i < menuBurgerItemsList.length; i++) {
+  menuBurgerItemsList[i].addEventListener('click', () => {
+    if (window.innerWidth <= 768) {
       if (menuBurgerItemsList[i].classList.contains('header-menu-list__item--button')) {
         languageMenuMobile.classList.add('header-language-menu--active');
         menuBurgerButton.classList.remove('header__nav--active');
@@ -311,11 +314,13 @@ if (window.innerWidth <= 768) {
         document.querySelector('.header__top').removeAttribute('style');
         menuBurgerActived = false;
       }
-    });
-  }
+    }
+  });
+}
 
-  for (let i = 0; i < languageMenuMobileItemsList.length; i++) {
-    languageMenuMobileItemsList[i].addEventListener('click', () => {
+for (let i = 0; i < languageMenuMobileItemsList.length; i++) {
+  languageMenuMobileItemsList[i].addEventListener('click', () => {
+    if (window.innerWidth <= 768) {
       languageMenuMobile.classList.remove('header-language-menu--active');
       menuBurgerButton.classList.add('header__nav--active');
       menuBurger.classList.add('header-menu--active');
@@ -324,8 +329,8 @@ if (window.innerWidth <= 768) {
 
       menuBurgerActived = true;
       languageMenuMobileActived = false;
-    });
-  }
+    }
+  });
 }
 
 /*                             SWIPE SLIDER                                           */
@@ -333,7 +338,7 @@ if (window.innerWidth <= 768) {
 const slider = (window.innerWidth > 600) ? document.querySelector('.top-aboutus__videos') : document.querySelector('.top-aboutus--690__videos');
 const slides = slider.querySelectorAll('.top-aboutus__video');
 
-const slidesDotsArray = (window.innerWidth > 690) ? document.querySelectorAll('.top-aboutus-dotted-slider__dot') : document.querySelectorAll('.top-aboutus-dotted-slider__dot--690');
+const slidesDotsArray = (window.innerWidth > 600) ? document.querySelectorAll('.top-aboutus-dotted-slider__dot') : document.querySelectorAll('.top-aboutus-dotted-slider__dot--690');
 
 let startX;
 
@@ -369,12 +374,14 @@ function showPrevSlide() {
   slidesDotsArray[currentSlide].classList.add('top-aboutus-dotted-slider__dot--active');
 }
 
-if (window.innerWidth <= 768) {
-  slider.addEventListener('touchstart', (event) => {
+slider.addEventListener('touchstart', (event) => {
+  if (window.innerWidth <= 768) {
     startX = event.touches[0].clientX;
-  });
+  }
+});
 
-  slider.addEventListener('touchend', (event) => {
+slider.addEventListener('touchend', (event) => {
+  if (window.innerWidth <= 768) {
     const endX = event.changedTouches[0].clientX;
     const diffX = startX - endX;
 
@@ -387,12 +394,12 @@ if (window.innerWidth <= 768) {
         showPrevSlide();
       }
     }
-  });
-}
+  }
+});
 
 /*                             ABOUTUS VIDEO POPUP                                           */
 
-const aboutusVideoPlayButton = document.getElementById('aboutus-video-play-button');
+const aboutusVideoPlayButton = (window.innerWidth > 600) ? document.getElementById('aboutus-video-play-button') : document.getElementById('aboutus-video-play-button-690');
 const aboutusVideoCloseButton = document.getElementById('aboutus-video-popup-close-button');
 
 const aboutusVideoPopup = document.getElementById('aboutus-video-popup');
@@ -427,4 +434,10 @@ document.addEventListener('keydown', (event) => {
       }, 300);
     }
   }
+});
+
+document.getElementById('aboutus-video-play-button-690').addEventListener('click', () => {
+  aboutusVideoPopup.style.visibility = 'visible';
+  aboutusVideoPopup.style.opacity = 1;
+  document.querySelector('body').style.overflow = 'hidden';
 });
