@@ -682,10 +682,6 @@ body {
 .adventage {
   @include hover((transform), (scale(1.1)));
 
-  &:hover &__title {
-    color: $color-grey-light;
-  }
-
   &:hover &__text {
     color: $color-white;
   }
@@ -869,6 +865,14 @@ body {
       min-width: 430px;
       height: 290px;
 
+      source {
+        user-select: none;
+        -webkit-user-drag: none;
+        -khtml-user-drag: none;
+        -moz-user-drag: none;
+        -o-user-drag: none;
+      }
+
       @media only screen and (max-width: 768px) {
         min-width: 340px;
       }
@@ -910,6 +914,11 @@ body {
   }
   
   &__video {
+    user-select: none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
     display: none;
 
     transition: all 0.5s;
@@ -1736,10 +1745,6 @@ body {
 .item-whykatloco {
   @include hover((transform), (scale(1.05)));
 
-  &:hover &__title {
-    color: $color-grey-light;
-  }
-
   &:hover &__text {
     color: $color-white;
   }
@@ -2046,7 +2051,12 @@ body {
   bottom: 150px;
   right: 100px;
 
-  @include hover((filter), (hue-rotate(180deg) brightness(90%) saturate(120%)));
+  @include hover((filter), (brightness(3000%)));
+  transition: none;
+
+  &:active {
+    transform: translateY(1px);
+  }
 
   @media only screen and (max-width: 1110px) {
     right: 30px;

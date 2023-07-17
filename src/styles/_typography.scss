@@ -120,4 +120,8 @@ h3 {
     @include hover(background-color, $color-white);
     @include hover(color, $color-blue);
   }
+
+  &:not(:disabled):active {
+    transform: translateY(3px);
+  }
 }

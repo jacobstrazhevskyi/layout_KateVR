@@ -335,15 +335,22 @@ for (let i = 0; i < languageMenuMobileItemsList.length; i++) {
 
 /*                             SWIPE SLIDER                                           */
 
-const slider = (window.innerWidth > 600) ? document.querySelector('.top-aboutus__videos') : document.querySelector('.top-aboutus--690__videos');
+const slider = document.querySelector('.top-aboutus__videos');
 const slides = slider.querySelectorAll('.top-aboutus__video');
 
-const slidesDotsArray = (window.innerWidth > 600) ? document.querySelectorAll('.top-aboutus-dotted-slider__dot') : document.querySelectorAll('.top-aboutus-dotted-slider__dot--690');
+const slider600 = document.querySelector('.top-aboutus--690__videos');
+const slides600 = slider600.querySelectorAll('.top-aboutus__video');
+
+const slidesDotsArray = document.querySelectorAll('.top-aboutus-dotted-slider__dot');
+const slidesDotsArray600 = document.querySelectorAll('.top-aboutus-dotted-slider__dot--690');
 
 let startX;
 
 let currentSlide = 0;
 let prevSlide;
+
+let currentSlide600 = 0;
+let prevSlide600;
 
 function showNextSlide() {
   // slides[currentSlide].style.display = 'none';
@@ -374,6 +381,35 @@ function showPrevSlide() {
   slidesDotsArray[currentSlide].classList.add('top-aboutus-dotted-slider__dot--active');
 }
 
+function showNextSlide600() {
+  // slides[currentSlide].style.display = 'none';
+  prevSlide600 = currentSlide600;
+  currentSlide600 = (currentSlide600 + 1) % slides600.length;
+
+  for (let i = 0; i < slides600.length; i++) {
+    slides600[i].style.marginLeft = `-${currentSlide600}00%`;
+  }
+
+  // slides[currentSlide].style.display = 'block';
+
+  slidesDotsArray600[prevSlide600].classList.remove('top-aboutus-dotted-slider__dot--active');
+  slidesDotsArray600[currentSlide600].classList.add('top-aboutus-dotted-slider__dot--active');
+}
+
+function showPrevSlide600() {
+  // slides[currentSlide].style.display = 'none';
+  prevSlide600 = currentSlide600;
+  currentSlide600 = (currentSlide600 - 1 + slides600.length) % slides600.length;
+
+  for (let i = 0; i < slides.length; i++) {
+    slides600[i].style.marginLeft = `-${currentSlide600}00%`;
+  }
+  // slides[currentSlide].style.display = 'block';
+
+  slidesDotsArray600[prevSlide600].classList.remove('top-aboutus-dotted-slider__dot--active');
+  slidesDotsArray600[currentSlide600].classList.add('top-aboutus-dotted-slider__dot--active');
+}
+
 slider.addEventListener('touchstart', (event) => {
   if (window.innerWidth <= 768) {
     startX = event.touches[0].clientX;
@@ -393,6 +429,83 @@ slider.addEventListener('touchend', (event) => {
         // Swipe Right
         showPrevSlide();
       }
+    }
+  }
+});
+
+slider.addEventListener('mousedown', (event) => {
+  if (window.innerWidth <= 768) {
+    startX = event.clientX;
+  }
+});
+
+slider.addEventListener('mouseup', (event) => {
+  if (window.innerWidth <= 768) {
+    const endX = event.clientX;
+    const diffX = startX - endX;
+
+    if (Math.abs(diffX) > 50) {
+      if (diffX > 0) {
+        showNextSlide();
+      } else {
+        showPrevSlide();
+      }
+    }
+  }
+});
+
+slider600.addEventListener('touchstart', (event) => {
+  if (window.innerWidth <= 768) {
+    startX = event.touches[0].clientX;
+  }
+});
+
+slider600.addEventListener('touchend', (event) => {
+  if (window.innerWidth <= 768) {
+    const endX = event.changedTouches[0].clientX;
+    const diffX = startX - endX;
+
+    if (Math.abs(diffX) > 50) {
+      if (diffX > 0) {
+        // Swipe Left
+        showNextSlide600();
+      } else {
+        // Swipe Right
+        showPrevSlide600();
+      }
+    }
+  }
+});
+
+slider600.addEventListener('mousedown', (event) => {
+  if (window.innerWidth <= 768) {
+    startX = event.clientX;
+  }
+});
+
+slider600.addEventListener('mouseup', (event) => {
+  if (window.innerWidth <= 768) {
+    const endX = event.clientX;
+    const diffX = startX - endX;
+
+    if (Math.abs(diffX) > 50) {
+      if (diffX > 0) {
+        showNextSlide600();
+      } else {
+        showPrevSlide600();
+      }
+    }
+  }
+});
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth <= 768) {
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].classList.remove('pic-hidden');
+    }
+  } else if (window.innerWidth >= 769) {
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.margin = '0';
     }
   }
 });
