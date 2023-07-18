@@ -138,8 +138,12 @@ const contentElements = document.querySelectorAll('.list-features');
 
 const featuresButtonsStatusArray = [];
 
+let openedFeatureButtonNow;
+let openedFeatureNow;
+let openedFeatureId;
+
 class FeatureShowButtonStatus {
-  constructor(id, openCloseStatus, content, image) {
+  constructor(id, openCloseStatus, content) {
     this.id = id;
     this.status = openCloseStatus;
     this.content = content;
@@ -167,6 +171,18 @@ for (let i = 0; i < featuresButtons.length; i++) {
             }, 1);
             featuresButtons[i].style.opacity = 0;
             featuresButtonsStatusArray[j].status = 'opened';
+
+            if (openedFeatureButtonNow !== featuresButtons[i]) {
+              if (openedFeatureButtonNow !== undefined) {
+                openedFeatureButtonNow.style.opacity = 1;
+                openedFeatureNow.style.opacity = 0;
+                openedFeatureNow.style.display = 'none';
+                featuresButtonsStatusArray[openedFeatureId].status = 'closed';
+              }
+            }
+            openedFeatureButtonNow = featuresButtons[i];
+            openedFeatureNow = document.querySelector(`.${featuresButtonsStatusArray[j].content}`);
+            openedFeatureId = j;
           } else if (featuresButtonsStatusArray[j].status === 'opened') {
             document.querySelector(`.${featuresButtonsStatusArray[j].content}`).style.opacity = 0;
 
@@ -181,6 +197,30 @@ for (let i = 0; i < featuresButtons.length; i++) {
     }
   });
 }
+
+window.addEventListener('resize', () => {
+  if (window.innerWidth >= 1100) {
+    for (let i = 0; i < contentElements.length; i++) {
+      contentElements[i].style.opacity = 1;
+      contentElements[i].style.display = 'block';
+    }
+  }
+
+  if (window.innerWidth < 1100 && window.innerWidth >= 1000) {
+    for (let i = 0; i < contentElements.length; i++) {
+      contentElements[i].style.opacity = 0;
+      contentElements[i].style.display = 'none';
+    }
+
+    for (let i = 0; i < featuresButtons.length; i++) {
+      featuresButtons[i].style.opacity = 1;
+    }
+
+    for (let i = 0; i < featuresButtonsStatusArray.length; i++) {
+      featuresButtonsStatusArray[i].status = 'closed';
+    }
+  }
+});
 
 /*                       LANGUAGE SWITCH BUTTON                               */
 
@@ -444,7 +484,7 @@ slider.addEventListener('mouseup', (event) => {
     const endX = event.clientX;
     const diffX = startX - endX;
 
-    if (Math.abs(diffX) > 50) {
+    if (Math.abs(diffX) > 30) {
       if (diffX > 0) {
         showNextSlide();
       } else {
@@ -488,7 +528,7 @@ slider600.addEventListener('mouseup', (event) => {
     const endX = event.clientX;
     const diffX = startX - endX;
 
-    if (Math.abs(diffX) > 50) {
+    if (Math.abs(diffX) > 30) {
       if (diffX > 0) {
         showNextSlide600();
       } else {
@@ -503,9 +543,15 @@ window.addEventListener('resize', () => {
     for (let i = 0; i < slides.length; i++) {
       slides[i].classList.remove('pic-hidden');
     }
-  } else if (window.innerWidth >= 769) {
+  } else if (window.innerWidth >= 769 && window.innerWidth <= 790) {
     for (let i = 0; i < slides.length; i++) {
       slides[i].style.margin = '0';
+    }
+
+    slides[0].classList.remove('pic-hidden');
+
+    for (let i = 1; i < slides.length; i++) {
+      slides[i].classList.add('pic-hidden');
     }
   }
 });

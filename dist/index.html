@@ -304,6 +304,15 @@
                   <img src="/03.9579f473.svg" alt="Decoration 3" class="features__decoration features__decoration--3">
                 </picture>
               </div>
+              <div class="features__hovers">
+                <div class="features__hover hover-feature hover-feature--1" onmouseover="featuresHoverEffect(this)" onmouseout="featuresHoverEffect(this)"></div>
+                <div class="features__hover hover-feature hover-feature--2" onmouseover="featuresHoverEffect(this)" onmouseout="featuresHoverEffect(this)"></div>
+                <div class="features__hover hover-feature hover-feature--3" onmouseover="featuresHoverEffect(this)" onmouseout="featuresHoverEffect(this)"></div>
+                <script>function featuresHoverEffect(element) {
+  var listFeature = document.querySelector(".list-features--".concat(element.classList[2].match(/\d/g)));
+  listFeature.classList.toggle('list-features--hovered');
+}</script>
+              </div>
               <div class="features__specs">
                 <ul class="features__list list-features list-features--1">
                   <h3 class="list-features__title">SENSOR</h3>

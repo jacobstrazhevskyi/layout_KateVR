@@ -182,7 +182,13 @@ body {
 
       &--active::before {
         width: 29px;
-        transform: translateY(-50%) rotate(-45deg) translateX(-4px);
+        background-color: transparent;
+        border-bottom: 2px solid $color-white;
+        padding: 7px;
+        transform: translateY(-50%) 
+          rotate(-45deg) 
+          translateX(-4px) 
+          translate(0, -50%);
       }
 
       &--language-menu-active {
@@ -594,6 +600,8 @@ body {
     font-weight: 500;
     font-size: 1.6rem;
     line-height: 130%;
+
+    padding: 5px;
 
     color: $color-white;
   }
@@ -1541,9 +1549,55 @@ body {
       }
     }
   }
+
+  &__hovers {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    @media only screen and (max-width: 1100px) {
+      display: none;
+    }
+  }
+}
+
+.hover-feature {
+  position: absolute;
+
+  z-index: 10000;
+
+  width: 10px;
+  height: 10px;
+
+  &--1 {
+    top: 18px;
+    left: 127px;
+
+    width: 70px;
+    height: 15px;
+  }
+
+  &--2 {
+    top: 40px;
+    left: 4px;
+
+    height: 200px;
+    width: 45px;
+  }
+
+  &--3 {
+    width: 130px;
+    height: 130px;
+    bottom: -205px;
+    left: 100px;
+
+    border-radius: 50%;
+  }
 }
 
 .list-features {
+  @include hover((transform), (scale(1.07)));
+
   z-index: 100;
 
   @media only screen and (max-width: 1100px) {
@@ -1552,6 +1606,10 @@ body {
     padding-bottom: 22px;
     background-color: $color-purple;
     border-radius: 4px;
+  }
+
+  &--hovered {
+    transform: scale(1.07);
   }
 
   &--1 {
@@ -2187,6 +2245,8 @@ body {
     font-weight: 400;
     font-size: 14px;
     line-height: 150%;
+
+    padding: 5px;
 
     color: $color-grey-light-2;
   }
