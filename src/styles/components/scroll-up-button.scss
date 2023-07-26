@@ -1,0 +1,27 @@
+.scroll-up-button {
+  display: none;
+  position: fixed;
+
+  cursor: pointer;
+
+  background: transparent;
+  border: none;
+
+  bottom: 150px;
+  right: 100px;
+
+  @include hover((filter), (brightness(3000%)));
+  transition: filter 0.2s;
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  @media only screen and (max-width: 1110px) {
+    right: 30px;
+  }
+
+  @media only screen and (max-width: 550px) {
+    right: 5px;
+  }
+}

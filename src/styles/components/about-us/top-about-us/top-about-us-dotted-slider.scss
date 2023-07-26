@@ -1,0 +1,26 @@
+.top-aboutus-dotted-slider {
+  @media only screen and (max-width: 768px) {
+    position: absolute;
+    bottom: 0;
+  }
+
+  @media only screen and (max-width: 600px) {
+    position: relative;
+  }
+
+  &__dot {
+    border-radius: 50%;
+    height: 4px;
+    width: 4px;
+
+    &:not(:last-child) {
+      margin-right: 6px;
+    }
+
+    background-color: $color-grey-light-1;
+
+    &--active {
+      background-color: $color-grey-dark-1;
+    }
+  }
+}

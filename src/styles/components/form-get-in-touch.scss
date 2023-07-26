@@ -1,0 +1,93 @@
+.form-getintouch {
+  & > * {
+    margin-bottom: 24px;
+  }
+
+  &__phone {
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+  }
+
+  &__label {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  &__span {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: $color-grey-light;
+
+    transition: all 0.3s;
+  }
+
+  &__message {
+    resize: none;
+    margin-bottom: 90px;
+
+    @media only screen and (max-width: 768px) {
+      margin-bottom: 48px;
+    }
+
+    @media only screen and (max-width: 500px) {
+      margin-bottom: 30px;
+    }
+
+    min-height: 88px;
+  }
+
+  &__button {
+    align-self: flex-start;
+    margin: 0;
+
+    @media only screen and (max-width: 500px) {
+      margin-bottom: 30px;
+      align-self: stretch;
+    }
+  }
+}
+
+.input {
+  font-family: "Inter";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+
+  transition: border-bottom 0.3s;
+
+  color: $color-white;
+
+  background: transparent;
+
+  border: none;
+  border-bottom: 1px solid $color-grey-dark;
+
+  outline: none;
+  
+  &:not(:placeholder-shown) {
+    padding-bottom: 6px;
+  }
+
+  &:not(:placeholder-shown) + .form-getintouch__span {
+    transform: translateY(-4px);
+  }
+
+  &:focus {
+    border-bottom: 1px solid $color-blue;
+
+    & + .form-getintouch__span {
+      color: $color-blue;
+    }
+  }
+
+  &:focus:invalid {
+    border-bottom: 1px solid $color-brown;
+
+    & + .form-getintouch__span {
+      color: $color-brown;
+    }
+  }
+}

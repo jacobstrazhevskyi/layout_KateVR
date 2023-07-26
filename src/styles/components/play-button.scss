@@ -1,0 +1,53 @@
+.play-button {
+  cursor: pointer;
+
+  align-self: flex-start;
+
+  background-color: transparent;
+  border: none;
+  color: #fff;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 27px;
+    left: 26px;
+    z-index: 10000;
+    width: 20px;
+    height: 17px;
+    @extend %triangle;
+    transform: rotate(90deg);
+    background-color: $color-white;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  &:hover {
+    &::after {
+      opacity: 1;
+    }
+
+    .play-button__text {
+      color: $color-blue;
+    }
+  }
+
+  @media only screen and (max-width: 430px) {
+    width: 221px;
+    align-self: flex-start;
+  }
+
+  &__text {
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 130%;
+    margin-left: -133px;
+
+    transition: color 0.3s;
+  }
+}

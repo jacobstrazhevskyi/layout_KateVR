@@ -1,0 +1,120 @@
+.getintouch {
+  padding-top: 156px;
+  padding-bottom: 205px;
+
+  @media only screen and (max-width: 1280px) {
+    padding: 100px 0;
+  }
+
+  @media only screen and (max-width: 500px) {
+    padding: 74px 0;
+  }
+
+  background-color: $color-black;
+
+  &__container {
+    position: relative;
+    display: flex;
+
+    @media only screen and (max-width: 768px) {
+      padding: 0 34px;
+    }
+
+    @media only screen and (max-width: 500px) {
+      padding: 0 20px;
+
+      flex-direction: column;
+    }
+  }
+
+  &__info {
+    flex: 0 0 50%;
+
+    @media only screen and (max-width: 768px) {
+      margin-right: 22px;
+    }
+
+    @media only screen and (max-width: 500px) {
+      flex: 0 0 100%;
+      margin: 0;
+    }
+  }
+
+  &__subtitle {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 121%;
+
+    margin-bottom: 13px;
+
+    @media only screen and (max-width: 768px) {
+      margin-bottom: 11px;
+    }
+
+    color: $color-blue;
+  }
+
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: 26px;
+    }
+
+    @media only screen and (max-width: 768px) {
+      &:not(:last-child) {
+        margin-bottom: 50px;
+      }
+    }
+
+    @media only screen and (max-width: 500px) {
+      &:not(:last-child) {
+        margin-bottom: 32px;
+      }
+    }
+  }
+
+  &__text-info {
+    &:not(:last-child) {
+      margin-bottom: 76px;
+    }
+
+    @media only screen and (max-width: 768px) {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+    }
+
+    @media only screen and (max-width: 500px) {
+      position: absolute;
+      bottom: -97px;
+      font-size: 12px;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    @media only screen and (max-width: 500px) {
+      display: none;
+    }
+  }
+
+  &__contact {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 119%;
+    color: $color-grey-light;
+
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+  }
+
+  &__form {
+    flex: 0 0 50%;
+
+    display: flex;
+    flex-direction: column;
+  }
+}

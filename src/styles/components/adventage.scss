@@ -1,0 +1,64 @@
+.adventage {
+  @include hover((transform), (scale(1.1)));
+
+  &:hover &__text {
+    color: $color-white;
+  }
+
+  &__icon {
+    margin-bottom: 21px;
+
+    @media only screen and (max-width: 430px) {
+      display: none;
+    }
+  }
+  
+  &__title {
+    transition: color 0.3s;
+    margin-bottom: 20px;
+
+    @media only screen and (max-width: 768px) {
+      font-size: 18px;
+    }
+
+    @media only screen and (max-width: 430px) {
+      font-size: 16px;
+    }
+  }
+  
+  &__text {
+    transition: color 0.3s;
+    max-width: 348px;
+    text-align: center;
+
+    @media only screen and (max-width: 1280px) {
+      max-width: 250px;
+      font-size: 2rem;
+    }
+
+    @media only screen and (max-width: 768px) {
+      max-width: 340px;
+    }
+
+    @media only screen and (max-width: 430px) {
+      max-width: 280px;
+      max-height: 52px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: start;
+
+      display: -webkit-box;
+      -ms-box-orient: vertical;
+      -moz-box-orient: vertical;
+      -webkit-box-orient: vertical;
+      -ms-line-clamp: 2;
+      -moz-line-clamp: 2;
+      -webkit-line-clamp: 2;
+
+      &::after {
+        content: "...";
+        display: inline;
+      }
+    }
+  }
+}

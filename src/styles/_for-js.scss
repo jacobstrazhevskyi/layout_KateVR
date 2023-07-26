@@ -1,0 +1,42 @@
+.pic-shown {
+  animation: picture-shown 0.9s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.pic-hidden {
+  animation: picture-hidden 0.5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes picture-shown {
+  0% {
+    display: none;
+    scale: 0;
+  }
+
+  60% {
+    display: block;
+  }
+
+  80% {
+    scale: 1.2;
+  }
+
+  100% {
+    scale: 1;
+  }
+}
+
+@keyframes picture-hidden {
+  from {
+    display: block;
+    scale: (1);
+  }
+
+  to {
+    display: none;
+    scale: (0);
+  }
+}

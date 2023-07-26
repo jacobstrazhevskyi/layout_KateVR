@@ -1,0 +1,79 @@
+.footer {
+  background-color: $color-black-1;
+
+  padding-top: 43px;
+  padding-bottom: 35px;
+
+  @media only screen and (max-width: 1280px) {
+    padding: 39px 0;
+  }
+
+  @media only screen and (max-width: 500px) {
+    padding-top: 45px;
+    padding-bottom: 50px;
+  }
+
+  &__contacts {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+
+    grid-area: contacts;
+
+    @media only screen and (max-width: 500px) {
+      display: flex;
+    }
+  }
+
+  &__contact {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 119%;
+    color: $color-grey-light;
+
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+
+    @media only screen and (max-width: 500px) {
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 123%;
+    }
+  }
+
+  &__container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    @media only screen and (max-width: 1280px) {
+      align-items: center;
+    }
+
+    @media only screen and (max-width: 768px) {
+      padding: 0 34px;
+    }
+
+    @media only screen and (max-width: 630px) {
+      padding: 0 15px;
+    }
+
+    @media only screen and (max-width: 500px) {
+      display: grid;
+      grid-template-areas: "logo ."
+        "navigation contacts"
+        "navigation socials";
+
+      align-items: end;
+    }
+  }
+
+  &__link {
+    grid-area: logo;
+
+    @media only screen and (max-width: 500px) {
+      margin-bottom: 15px;
+    }
+  }
+}

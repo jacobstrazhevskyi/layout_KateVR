@@ -1,0 +1,71 @@
+.item-whykatloco {
+  @include hover((transform), (scale(1.05)));
+
+  &:hover &__text {
+    color: $color-white;
+  }
+
+  &__icon {
+    @media only screen and (max-width: 320px) {
+      display: none;
+    }
+  }
+
+  &__title {
+    transition: color 0.3s;
+    &:not(:last-child) {
+      margin-bottom: 18px;
+
+      @media only screen and (max-width: 320px) {
+        margin-bottom: 11px;
+      }
+    }
+
+    &:not(:first-child) {
+      margin-top: 34px;
+
+      @media only screen and (max-width: 320px) {
+        margin-top: 0;
+      }
+    }
+
+    @media only screen and (max-width: 768px) {
+      font-weight: 900;
+      font-size: 16px;
+      line-height: 119%;
+    }
+  }
+
+  &__text {
+    transition: color 0.3s;
+    max-width: 348px;
+    text-align: center;
+
+    @media only screen and (max-width: 768px) {
+      text-align: center;
+      max-width: 170px;
+      max-height: 74px;
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      display: -webkit-box;
+      -ms-box-orient: vertical;
+      -moz-box-orient: vertical;
+      -webkit-box-orient: vertical;
+      -ms-line-clamp: 3;
+      -moz-line-clamp: 3;
+      -webkit-line-clamp: 3;
+
+      &::after {
+        content: "...";
+        display: inline;
+      }
+
+      @media only screen and (max-width: 320px) {
+        max-width: 277px;
+        text-align: start;
+      }
+    }
+  }
+}

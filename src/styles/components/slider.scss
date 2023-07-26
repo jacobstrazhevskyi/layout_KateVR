@@ -1,0 +1,56 @@
+.slider {
+  position: relative;
+  display: flex;
+
+  & > * {
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 150%;
+  }
+
+  &__previous {
+    user-select: none;
+    transition: all 0.3s;
+    cursor: pointer;
+    transform: translateX(-10.3rem);
+
+    @include hover((color), ($color-blue));
+
+    &:active {
+      color: $color-blue-dark;
+    }
+  }
+
+  &__next {
+    user-select: none;
+    transition: all 0.3s;
+    cursor: pointer;
+  
+    @include hover((color), ($color-blue));
+
+    &:active {
+      color: $color-blue-dark;
+    }
+  }
+
+  &__border-grey {
+    position: absolute;
+    width: 20.7rem;
+    height: 1px;
+    background-color: #212121;
+  
+    bottom: -10px;
+    left: -10.3rem;
+  }
+
+  &__border-blue {
+    transition: width 0.6s;
+    position: absolute;
+    width: 6.9rem;
+    height: 1px;
+    background-color: $color-blue;
+
+    bottom: -10px;
+    left: -10.3rem;
+  }
+}

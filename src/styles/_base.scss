@@ -1,0 +1,50 @@
+body {
+  background: $c-gray;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-width: 100%;
+  overflow: hidden;
+}
+
+.body-overflow {
+  scroll-behavior: smooth;
+  max-height: 100%;
+  overflow-y: scroll;
+  scroll-padding-left: 2px;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  &::-webkit-scrollbar-track {
+    background-color: black;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background-color: #999;
+    border-radius: 5px;
+  }
+  
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #666;
+  }
+}
+
+._container {
+  max-width: 1452px;
+  margin: 0 auto;
+  box-sizing: content-box;
+  padding: 0 15px;
+
+  @media only screen and (max-width: 1280px) {
+    max-width: 1060px;
+  }
+
+  @media only screen and (max-width: 430px) {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+}

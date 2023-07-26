@@ -1,0 +1,25 @@
+.list-whykatloco {
+  gap: 50px 200px;
+
+  @media only screen and (max-width: 1280px) {
+    gap: 50px 5px;
+  }
+    
+  @media only screen and (max-width: 768px) {
+    gap: 50px 20px;
+  }
+
+  @media only screen and (max-width: 320px) {
+    gap: 20px 20px;
+  }
+  
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media only screen and (max-width: 320px) {
+      align-items: flex-start;
+    }
+  }
+}

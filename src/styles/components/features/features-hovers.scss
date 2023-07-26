@@ -1,0 +1,33 @@
+.hover-feature {
+  position: absolute;
+
+  z-index: 10000;
+
+  width: 10px;
+  height: 10px;
+
+  &--1 {
+    top: 18px;
+    left: 127px;
+
+    width: 70px;
+    height: 15px;
+  }
+
+  &--2 {
+    top: 40px;
+    left: 4px;
+
+    height: 200px;
+    width: 45px;
+  }
+
+  &--3 {
+    width: 130px;
+    height: 130px;
+    bottom: -205px;
+    left: 100px;
+
+    border-radius: 50%;
+  }
+}

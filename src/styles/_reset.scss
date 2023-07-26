@@ -29,3 +29,12 @@ a {
 
   @include hover((color, text-decoration), ($color-blue, underline));
 }
+
+::selection {
+  background-color: $select-color;
+  color: $color-green;
+}
+
+#not-link {
+  text-decoration: none;
+}
